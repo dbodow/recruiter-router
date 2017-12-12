@@ -15,7 +15,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const index = require('./routes/index');
-const users = require('./routes/users');
+const auth = require('./routes/api/authentication');
+// const portfolios = require('./routes/api/auth');
 
 const app = express();
 
@@ -44,8 +45,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// HTML / Jade rendering
 app.use('/', index);
-app.use('/users', users);
+// app.use('/portfolios', portfolios);
+// JSON rendering
+app.use('/api/authentication', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
