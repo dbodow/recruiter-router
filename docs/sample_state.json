@@ -20,8 +20,9 @@
           "zipCode": "94111"
         }
       },
-      "taggedInfo": {
-        "[:userTag1]": {
+      "taggedInfo": [
+        {
+          "[:userTag1]": "front end",
           "heroSection": {
             "title": "My Awesome Portfolio Page",
             "subTitle": "Front End Developer"
@@ -45,8 +46,8 @@
               "4": { "...": "..." }
             }
           },
-          "projectsSection": {
-            "1": {
+          "projectsSection": [
+            {
               "projectTitle": "Abstract",
               "projectDescription": "Blogging site based off of Medium",
               "projectURL": "http://www.abstract-io.herokuapp.com",
@@ -54,22 +55,24 @@
                 "https://raw.githubusercontent.com/ajdelossantos/Abstract/master/docs/wireframes/welcome.png",
               "githubURL": "https://github.com/dbodow/recruiter-router/"
             },
-            "2": { "...": "..." },
-            "3": { "...": "..." }
-          },
+            { "...": "..." },
+            { "...": "..." }
+          ],
           "skillsSection": {
-            "1": {
-              "skillTitle": "React",
-              "skillPercentage": 90
-            },
-            "2": { "...": "..." },
-            "3": { "...": "..." },
-            "4": { "...": "..." },
-            "skillParagraphText": "Lorem ipsum....."
+            "skillsParagraphText": "Lorem ipsum.....",
+            "skills": [
+              {
+                "skillTitle": "React",
+                "skillPercentage": 90
+              },
+              { "...": "..." },
+              { "...": "..." },
+              { "...": "..." }
+            ]
           }
         },
-        "[:userTag2]": { "...": "..." }
-      },
+        { "[:userTag2]": { "...": "..." } }
+      ],
       "analytics": {
         "[:link1]": {
           "_id": "4jmvs0!Y_=dyOIWx",
