@@ -10,7 +10,7 @@ const {
 const tagsFn = () => {
   let arr = [];
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     let tag = {
       tagName: tagNameFn(),
       heroSection: heroFn(),
@@ -40,14 +40,19 @@ const visitsRandomizer = () => {
   return arr;
 };
 
-const analyticsFn = (userName, tagName) => {
+// chooses tags to assign to analytics
+const analyticsTagHelper = tags => {
+  let tagsIdx = Math.floor(Math.random() * tags.length);
+  return tags[tagsIdx].tagName;
+};
+
+const analyticsFn = (userName, tags) => {
   let arr = [];
   for (let i = 0; i < 3; i++) {
     let companyName = faker.company.companyName();
 
-    // build out tag
     let datum = {
-      tag: tagName,
+      tag: analyticsTagHelper(tags),
       userName: userName,
       companyName: companyName,
       visits: visitsRandomizer()
