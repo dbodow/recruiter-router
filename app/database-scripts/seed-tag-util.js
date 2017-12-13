@@ -7,15 +7,28 @@ const heroFn = () => ({
   subtitle: tagNameFn()
 });
 
+// adds 6 months
+const dateHelper = string => {
+  let date = new Date(Date.parse(string));
+  console.log(Date.parse(string));
+  let nextDate = date;
+
+  nextDate = new Date(nextDate.setMonth(nextDate.getMonth() + 6));
+  console.log(nextDate.toString());
+  return nextDate.toString();
+};
+
 const experiencesFn = () => {
   let arr = [];
   for (let i = 0; i < 3; i++) {
+    let startDate = faker.date.past();
     let exp = {
+      order: i + 1,
       companyName: faker.company.companyName(),
       companyUrl: faker.internet.url(),
       jobTitle: faker.name.jobTitle(),
-      startDate: faker.date.past(),
-      endDate: faker.date.past(),
+      startDate: Date.parse(faker.date.past()), // fix
+      endDate: Date.parse(faker.date.past()),
       hoverTitle: faker.lorem.sentence(),
       hoverDescription: faker.lorem.sentence()
     };
@@ -35,6 +48,7 @@ const projectsFn = () => {
       .join("_");
 
     let project = {
+      order: i + 1,
       projectTitle: productName,
       projectDescription: faker.lorem.sentence(),
       projectURL: faker.internet.url(),
@@ -54,6 +68,7 @@ const skillsFn = () => {
     let skillName = `${faker.company.bsAdjective()} ${faker.company.bsNoun()}`;
 
     let skill = {
+      order: i + 1,
       skillTitle: skillName,
       skillPercentage: Math.round(Math.random() * 100)
     };

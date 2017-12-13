@@ -24,7 +24,8 @@ const tags3 = tagsFn();
 const portfolio1 = {
   userName: user1.userName,
   templateName: "Flex",
-  staticInfo: tags1,
+  staticInfo: contactsFn(user1.userName),
+  taggedInfo: tags1,
   analytics: analyticsFn(user1.userName, tags1)
 };
 
@@ -44,4 +45,4 @@ const portfolio3 = {
   analytics: analyticsFn(user3.userName, tags3)
 };
 
-console.log(portfolio2);
+console.log(portfolio2.taggedInfo[0].experienceSection.experiences);

@@ -34,13 +34,13 @@ const visitsRandomizer = () => {
   let arr = [];
 
   for (let i = 0; i < numVisits; i++) {
-    arr.push(faker.date.recent());
+    arr.push(Date.parse(faker.date.recent()));
   }
 
   return arr;
 };
 
-// chooses tags to assign to analytics
+// chooses tagNames to assign to analytics
 const analyticsTagHelper = tags => {
   let tagsIdx = Math.floor(Math.random() * tags.length);
   return tags[tagsIdx].tagName;
@@ -52,7 +52,7 @@ const analyticsFn = (userName, tags) => {
     let companyName = faker.company.companyName();
 
     let datum = {
-      tag: analyticsTagHelper(tags),
+      tagName: analyticsTagHelper(tags),
       userName: userName,
       companyName: companyName,
       visits: visitsRandomizer()
