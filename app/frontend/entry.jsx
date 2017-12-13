@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import Root from './components/root';
 import configureStore from './store/store.js';
 
 //testing
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  
+
   // we don't put the store directly on the window because
   // it can be confusing when debugging, sometimes giving you access to state
   // when you shouldn't
@@ -25,5 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.register = register;
   window.logout = logout;
 
-  ReactDOM.render(<h1>Welcome to RecruiterRouter</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
