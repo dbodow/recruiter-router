@@ -5,7 +5,7 @@ const reactController = {};
 
 reactController.index = (req, res) => {
   // res.render('index', { user : req.user });
-  res.render('index');
-}; 
+  res.render('index', { user : req.user });
+};
 
 module.exports = reactController;

@@ -15,8 +15,6 @@ router.post('/register', auth.doRegister);
 router.post('/login', auth.doLogin);
 
 // route for logout action
-router.get('/logout', auth.logout);
-
-router.get('/testing', auth.testing);
+router.delete('/', auth.logout);
 
 module.exports = router;
