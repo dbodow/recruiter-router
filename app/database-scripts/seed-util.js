@@ -59,6 +59,7 @@ const analyticsFn = (userName, tags) => {
     };
     arr.push(datum);
   }
+  console.log(arr);
   return arr;
 };
 

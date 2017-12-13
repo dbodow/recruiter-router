@@ -65,36 +65,43 @@ const p1 = JSON.stringify(portfolio1);
 const p2 = JSON.stringify(portfolio2);
 const p3 = JSON.stringify(portfolio3);
 
-const userSeeds = [new User({ u1 }), new User({ u2 }), new User({ u3 })];
+const userSeeds = [new User(user1), new User(user2), new User(user3)];
 
 const portSeeds = [
-  new Portfolio({ p1 }),
-  new Portfolio({ p2 }),
-  new Portfolio({ p3 })
+  new Portfolio(portfolio1),
+  new Portfolio(portfolio2),
+  new Portfolio(portfolio3)
 ];
 
-const saveSeeds = function() {
-  let iDone = 0;
-  for (let i = 0; i < userSeeds.length; i++) {
-    userSeeds[i].save(function(err, result) {
-      iDone++;
-    });
-  }
+// console.log("This is userSeeds1\n", userSeeds[0]);
 
-  let jDone = 0;
-  for (let j = 0; j < portSeeds.length; j++) {
-    portSeeds[j].save(function(err, result) {
-      jDone++;
-    });
-  }
+// console.log("This is portfolio1\n", portSeeds[0]);
+// console.log("This is portSeeds[1]\n", portSeeds[1]);
+// console.log("This is portSeeds[2]\n", portSeeds[2]);
 
-  if (iDone === 3 && jDone === 3) {
-    exit();
-  }
-};
+db.userSeeds[0].save();
+db.portSeeds[0].save();
+// sleep(5000);
+mongoose.disconnect();
 
-function exit() {
-  mongoose.disconnect();
-}
+// let iDone = 0;
+// for (let i = 0; i < userSeeds.length; i++) {
+//   userSeeds[i].save(function(err, result) {
+//     iDone++;
+//   });
+// }
 
-saveSeeds();
+// let jDone = 0;
+// for (let j = 0; j < portSeeds.length; j++) {
+//   portSeeds[j].save(function(err, result) {
+//     jDone++;
+//   });
+// }
+
+// if (iDone === 3 && jDone === 3) {
+//   exit();
+// }
+
+// function exit() {
+//   mongoose.disconnect();
+// }
