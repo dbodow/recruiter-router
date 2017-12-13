@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  
+
   // we don't put the store directly on the window because
   // it can be confusing when debugging, sometimes giving you access to state
   // when you shouldn't
