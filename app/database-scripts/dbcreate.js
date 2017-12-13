@@ -22,28 +22,7 @@ db.users.createIndex(
   { "username": 1 },
   { unique: true }
 )
-db.createCollection("portfolio",
-  {
-    validator: { $and:
-      [
-        {
-          userName: {
-            $type: "string",
-            $exists: true
-          },
-          templateName: {
-            $type: "string",
-            $in: [ "Flex" ],
-            $default: "Flex"
-          },
-          staticInfo: { $type: "object" },
-          taggedInfo: { $type: "array" },
-          analytics: { $type: "array" }
-        }
-      ]
-    }
-  }
-)
+
 
 db.createCollection("staticInfo",
   {
@@ -65,7 +44,7 @@ db.createCollection("staticInfo",
   }
 )
 
-db.createCollection(taggedInfo,
+db.createCollection("taggedInfo",
   {
     validator: { $and:
       [
@@ -82,33 +61,7 @@ db.createCollection(taggedInfo,
   }
 )
 
-db.createCollection(heroSection,
-  {
-    validator: { $and:
-      [
-        {
-          title: { $type: "string" },
-          subtitle: { $type: "string" }
-        }
-      ]
-    }
-  }
-)
-
-db.createCollection(experienceSection,
-  {
-    validator: { $and:
-      [
-        {
-          focusDescription: { $type: "string" },
-          experiences: { $type: "array" }
-        }
-      ]
-    }
-  }
-)
- 
-db.createCollection(experiences,
+db.createCollection("experiences",
   {
     validator: { $and:
       [
@@ -126,21 +79,8 @@ db.createCollection(experiences,
     }
   }
 )
- 
-db.createCollection(projectsSection,
-  {
-    validator: { $and:
-      [
-        {
-          focusDescription: { $type: "string" },
-          projects: { $type: "array" }
-        }
-      ]
-    }
-  }
-)
- 
-db.createCollection(projects,
+
+db.createCollection("projects",
   {
     validator: { $and:
       [
@@ -156,21 +96,8 @@ db.createCollection(projects,
     }
   }
 )
- 
-db.createCollection(skillsSection,
-  {
-    validator: { $and:
-      [
-        {
-          skillParagraphText: { $type: "string" },
-          skills: { $type: "array" }
-        }
-      ]
-    }
-  }
-)
- 
-db.createCollection(skills,
+
+db.createCollection("skills",
   {
     validator: { $and:
       [
@@ -183,8 +110,8 @@ db.createCollection(skills,
     }
   }
 )
- 
-db.createCollection(analyticDatum,
+
+db.createCollection("analyticDatum",
   {
     validator: { $and:
       [
@@ -198,6 +125,78 @@ db.createCollection(analyticDatum,
     }
   }
 )
- 
+
+db.createCollection("heroSection",
+  {
+    validator: { $and:
+      [
+        {
+          title: { $type: "string" },
+          subtitle: { $type: "string" }
+        }
+      ]
+    }
+  }
+)
+
+db.createCollection("experienceSection",
+  {
+    validator: { $and:
+      [
+        {
+          focusDescription: { $type: "string" },
+          experiences: { $type: "array" }
+        }
+      ]
+    }
+  }
+)
 
  
+db.createCollection("projectsSection",
+  {
+    validator: { $and:
+      [
+        {
+          focusDescription: { $type: "string" },
+          projects: { $type: "array" }
+        }
+      ]
+    }
+  }
+)
+
+db.createCollection("skillsSection",
+  {
+    validator: { $and:
+      [
+        {
+          skillParagraphText: { $type: "string" },
+          skills: { $type: "array" }
+        }
+      ]
+    }
+  }
+)
+
+db.createCollection("portfolio",
+  {
+    validator: { $and:
+      [
+        {
+          userName: {
+            $type: "string",
+            $exists: true
+          },
+          templateName: {
+            $type: "string",
+            $in: [ "Flex" ]
+          },
+          staticInfo: { $type: "object" },
+          taggedInfo: { $type: "array" },
+          analytics: { $type: "array" }
+        }
+      ]
+    }
+  }
+)

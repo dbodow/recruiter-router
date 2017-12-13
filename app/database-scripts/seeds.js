@@ -26,7 +26,7 @@ const portfolio1 = {
   templateName: "Flex",
   staticInfo: contactsFn(user1.userName),
   taggedInfo: tags1,
-  analytics: analyticsFn(user1.userName, tags1)
+  analyticData: analyticsFn(user1.userName, tags1)
 };
 
 const portfolio2 = {
@@ -45,4 +45,14 @@ const portfolio3 = {
   analytics: analyticsFn(user3.userName, tags3)
 };
 
-console.log(portfolio2.taggedInfo[0].experienceSection.experiences);
+const u1 = JSON.stringify(user1);
+const u2 = JSON.stringify(user2);
+const u3 = JSON.stringify(user3);
+
+const p1 = JSON.stringify(portfolio1);
+const p2 = JSON.stringify(portfolio2);
+const p3 = JSON.stringify(portfolio3);
+
+db.portfolio.remove({});
+db.users.insert([u1, u2, u3]);
+db.portfolio.insert([p1, p2, p3]);
