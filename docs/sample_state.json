@@ -5,12 +5,13 @@
       "userId": "7kJSM/MzBJI+75j8",
       "template": {
         "_id": "KO1nIU+p9DKxGg96",
-        "templatePath": "./assets/templates/default.html"
+        "templateName": "Flex"
       },
       "staticInfo": {
-        "contacts": {
-          "linkedin": "https://www.linkedin.com/in/ajamesdelossantos",
+        "contactSection": {
+          "linkedIn": "https://www.linkedin.com/in/ajamesdelossantos",
           "github": "https://github.com/ajdelossantos",
+          "phone": "555-123-4567",
           "email": "a.jamesdelossantos@gmail.com",
           "address1": "825 Battery St",
           "address2": "Floor 3",
@@ -19,49 +20,64 @@
           "zipCode": "94111"
         }
       },
-      "taggedInfo": {
-        "[:userTag1]": {
-          "hero": {
+      "taggedInfo": [
+        {
+          "[:userTag1]": "front end",
+          "heroSection": {
             "title": "My Awesome Portfolio Page",
             "subTitle": "Front End Developer"
           },
-          "experience": {
-            "bio":
+          "experienceSection": {
+            "focusDescription":
               "This is a small blurb about me and my skills...Please hire me!",
-            "jobs": {
+            "experiences": {
               "1": {
                 "companyName": "Stanford Jazz Workshop",
                 "companyUrl": "http://stanfordjazz.org",
                 "jobTitle": "Administrative Assistant",
                 "startDate": "month, year",
                 "endDate": "month, year",
-                "jobDescription":
-                  "Wrote SQL queries, created marketing copy, and posted copy website front end"
+                "hoverTitle": "Used technology to boost office productivity",
+                "hoverDescription":
+                  "Wrote SQL queries, created marketing copy, and posted copy for company website's front end. Better SQL queries allowed batch processing of donor mailings boosting throughput by 500%."
               },
               "2": { "...": "..." },
-              "3": { "...": "..." }
+              "3": { "...": "..." },
+              "4": { "...": "..." }
             }
           },
-          "skills": ["Ruby", "JavaScript", "React", "Redux", "..."],
-          "projects": {
-            "1": {
-              "title": "Abstract",
-              "description": "Blogging site based off of Medium",
-              "url": "http://www.abstract-io.herokuapp.com",
-              "imgUrl":
-                "https://raw.githubusercontent.com/ajdelossantos/Abstract/master/docs/wireframes/welcome.png"
+          "projectsSection": [
+            {
+              "projectTitle": "Abstract",
+              "projectDescription": "Blogging site based off of Medium",
+              "projectURL": "http://www.abstract-io.herokuapp.com",
+              "imageUrl":
+                "https://raw.githubusercontent.com/ajdelossantos/Abstract/master/docs/wireframes/welcome.png",
+              "githubURL": "https://github.com/dbodow/recruiter-router/"
             },
-            "2": { "...": "..." },
-            "3": { "...": "..." }
+            { "...": "..." },
+            { "...": "..." }
+          ],
+          "skillsSection": {
+            "skillsParagraphText": "Lorem ipsum.....",
+            "skills": [
+              {
+                "skillTitle": "React",
+                "skillPercentage": 90
+              },
+              { "...": "..." },
+              { "...": "..." },
+              { "...": "..." }
+            ]
           }
         },
-        "[:userTag2]": { "...": "..." }
-      },
+        { "[:userTag2]": { "...": "..." } }
+      ],
       "analytics": {
         "[:link1]": {
           "_id": "4jmvs0!Y_=dyOIWx",
           "path": "http://ajdelossantos.io/google",
-          "tag": "front end",
+          "tag": "front-end",
           "companyName": "Google",
           "visits": ["[:dateTime1]", "[:dateTime2]", "..."]
         },
@@ -70,11 +86,10 @@
     }
   },
   "session": {
-    "currentUser": {
+    "[username]": {
       "_id": "7kJSM/MzBJI+75j8",
       "name": "James Santos",
-      "username": "jsantos88",
-      "portfolioId": "EcmTPZwWRAozdA=="
+      "username": "jsantos88"
     }
   },
   "errors": {
