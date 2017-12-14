@@ -10,13 +10,15 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/recruiter-router', {useMongoClient: true})
   .then(() => console.log('connection successful'))
   .catch((err) => console.err(err));
-  
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const index = require('./routes/index');
 const auth = require('./routes/api/authentication');
 // const portfolios = require('./routes/api/auth');
+
+const portfolio = require('./routes/portfolios');
 
 const app = express();
 
@@ -30,7 +32,8 @@ app.use(require('express-session')({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false
-}))
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -50,7 +53,7 @@ app.use('/', index);
 // app.use('/portfolios', portfolios);
 // JSON rendering
 app.use('/api/authentication', auth);
-
+app.use('/:user/:company', portfolio);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
