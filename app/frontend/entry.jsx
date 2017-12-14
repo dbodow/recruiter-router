@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Root from './components/root';
-import configureStore from './store/store.js';
+import Root from "./components/root";
+import configureStore from "./store/store.js";
 
 //testing
-import { login, register, logout } from './actions/session_actions';
+import debugMode from "./debug/debug";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('root');
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.getElementById("root");
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
@@ -17,15 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
   // we don't put the store directly on the window because
   // it can be confusing when debugging, sometimes giving you access to state
   // when you shouldn't
-  window.getState = store.getState;
-  window.dispatch = store.dispatch; // just for testing!
-  window.login = login;
-  window.register = register;
-  window.logout = logout;
 
+  // just for testing!
+  debugMode(store);
   ReactDOM.render(<Root store={store} />, root);
 });

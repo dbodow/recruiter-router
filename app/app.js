@@ -53,7 +53,7 @@ app.use("/", index);
 // app.use('/portfolios', portfolios);
 // JSON rendering
 app.use("/api/authentication", auth);
-app.use("/api/portfolios", portfolios);
+app.use("/api/portfolio", portfolios);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
