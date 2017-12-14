@@ -17,7 +17,7 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const index = require("./routes/index");
 const auth = require("./routes/api/authentication");
-const portfolios = require("./routes/api/portfolios");
+const portfoliosManage = require("./routes/api/portfolios-manage");
 
 const app = express();
 
@@ -53,7 +53,7 @@ app.use("/", index);
 // app.use('/portfolios', portfolios);
 // JSON rendering
 app.use("/api/authentication", auth);
-app.use("/api/portfolio", portfolios);
+app.use("/api/portfolio-manager", portfoliosManage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

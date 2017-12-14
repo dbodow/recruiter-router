@@ -1,27 +1,28 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      username: '',
-      password: ''
+      name: "",
+      username: "",
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push("/");
     }
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
   }
 
   handleSubmit(e) {
@@ -32,12 +33,13 @@ class SessionForm extends React.Component {
   }
 
   nameField() {
-    if (this.props.formType === 'register') {
+    if (this.props.formType === "register") {
       return (
-        <input type="text"
+        <input
+          type="text"
           placeholder="Enter full name"
           value={this.state.name}
-          onChange={this.update('name')}
+          onChange={this.update("name")}
           className="login-input"
         />
       );
@@ -45,7 +47,7 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
-    if (this.props.formType === 'login') {
+    if (this.props.formType === "login") {
       return <Link to="/register">Register a new account instead.</Link>;
     } else {
       return <Link to="/login">Already a user? Log in instead.</Link>;
@@ -53,13 +55,11 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    console.log(this.props.errors);
-    return(
+    // console.log(this.props.errors);
+    return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
+          <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
@@ -75,16 +75,18 @@ class SessionForm extends React.Component {
             {this.renderErrors()}
             <div className="login-form">
               {this.nameField()}
-              <input type="text"
+              <input
+                type="text"
                 placeholder="Enter username"
                 value={this.state.username}
-                onChange={this.update('username')}
+                onChange={this.update("username")}
                 className="login-input"
               />
-              <input type="password"
+              <input
+                type="password"
                 placeholder="Enter password"
                 value={this.state.password}
-                onChange={this.update('password')}
+                onChange={this.update("password")}
                 className="login-input"
               />
               <input type="submit" value="Submit" />

@@ -32,5 +32,8 @@
     "redux-thunk": "^2.2.0",
     "serve-favicon": "~2.4.5",
     "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.7"
   }
 }
