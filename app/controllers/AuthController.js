@@ -12,8 +12,9 @@ authController.doRegister = (req, res) => {
   User.register(new User({ username : req.body.username, name: req.body.name }),
                 req.body.password, (err, user) => {
     if (err) {
+      if (user) console.log(user);
       res.status(422);
-      return res.json({ errors : ['Invalid credentials'] });
+      return res.json(['Invalid credentials']);
     }
 
     passport.authenticate('local')(req, res, () => {
