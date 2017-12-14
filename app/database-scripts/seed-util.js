@@ -46,20 +46,19 @@ const analyticsTagHelper = tags => {
   return tags[tagsIdx].tagName;
 };
 
-const analyticsFn = (userName, tags) => {
+const analyticsFn = (username, tags) => {
   let arr = [];
   for (let i = 0; i < 3; i++) {
     let companyName = faker.company.companyName();
 
     let datum = {
       tagName: analyticsTagHelper(tags),
-      userName: userName,
+      username: username,
       companyName: companyName,
       visits: visitsRandomizer()
     };
     arr.push(datum);
   }
-  console.log(arr);
   return arr;
 };
 

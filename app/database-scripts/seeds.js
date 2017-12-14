@@ -1,6 +1,7 @@
 const Portfolio = require("../models/portfolio");
 const User = require("../models/User");
 const mongoose = require("mongoose");
+mongoose.Promise = require("bluebird");
 
 const faker = require("faker");
 const { tagsFn, analyticsFn, contactsFn } = require("./seed-util");
@@ -13,19 +14,19 @@ mongoose
 
 const user1 = {
   name: faker.name.findName(),
-  userName: faker.internet.userName(),
+  username: faker.internet.userName(),
   password: "password"
 };
 
 const user2 = {
   name: faker.name.findName(),
-  userName: faker.internet.userName(),
+  username: faker.internet.userName(),
   password: "password"
 };
 
 const user3 = {
-  name: "James Santos",
-  userName: "jsantos15",
+  name: faker.name.findName(),
+  username: faker.internet.userName(),
   password: "password"
 };
 
@@ -34,74 +35,76 @@ const tags2 = tagsFn();
 const tags3 = tagsFn();
 
 const portfolio1 = {
-  userName: user1.userName,
+  username: user1.username,
   templateName: "Flex",
-  staticInfo: contactsFn(user1.userName),
+  staticInfo: contactsFn(user1.username),
   taggedInfo: tags1,
-  analyticData: analyticsFn(user1.userName, tags1)
+  analytics: analyticsFn(user1.username, tags1)
 };
 
 const portfolio2 = {
-  userName: user2.userName,
+  username: user2.username,
   templateName: "Flex",
-  staticInfo: contactsFn(user2.userName),
+  staticInfo: contactsFn(user2.username),
   taggedInfo: tags2,
-  analytics: analyticsFn(user2.userName, tags2)
+  analytics: analyticsFn(user2.username, tags2)
 };
 
 const portfolio3 = {
-  userName: user3.userName,
+  username: user3.username,
   templateName: "Flex",
-  staticInfo: contactsFn(user3.userName),
+  staticInfo: contactsFn(user3.username),
   taggedInfo: tags3,
-  analytics: analyticsFn(user3.userName, tags3)
+  analytics: analyticsFn(user3.username, tags3)
 };
 
-const u1 = JSON.stringify(user1);
-const u2 = JSON.stringify(user2);
-const u3 = JSON.stringify(user3);
+const successfulSave = el => {
+  console.log("Saved object:\n", el);
+};
 
-const p1 = JSON.stringify(portfolio1);
-const p2 = JSON.stringify(portfolio2);
-const p3 = JSON.stringify(portfolio3);
+const failedSave = () => {
+  console.log("Error saving, make sacrifice to nodemon & mongod");
+};
 
-const userSeeds = [new User(user1), new User(user2), new User(user3)];
+const incrementCurrentSave = () => {
+  currentSave++;
+  if (currentSave === saveCount) {
+    console.log("Now exiting...");
+    mongoose.disconnect();
+  }
+};
 
-const portSeeds = [
-  new Portfolio(portfolio1),
-  new Portfolio(portfolio2),
-  new Portfolio(portfolio3)
-];
+console.log("Created objects, now saving...");
 
-// console.log("This is userSeeds1\n", userSeeds[0]);
+const saveCount = 6;
+let currentSave = 0;
 
-// console.log("This is portfolio1\n", portSeeds[0]);
-// console.log("This is portSeeds[1]\n", portSeeds[1]);
-// console.log("This is portSeeds[2]\n", portSeeds[2]);
+new User(user1)
+  .save()
+  .then(successfulSave, failedSave)
+  .finally(incrementCurrentSave);
 
-db.userSeeds[0].save();
-db.portSeeds[0].save();
-// sleep(5000);
-mongoose.disconnect();
+new User(user2)
+  .save()
+  .then(successfulSave, failedSave)
+  .finally(incrementCurrentSave);
 
-// let iDone = 0;
-// for (let i = 0; i < userSeeds.length; i++) {
-//   userSeeds[i].save(function(err, result) {
-//     iDone++;
-//   });
-// }
+new User(user3)
+  .save()
+  .then(successfulSave, failedSave)
+  .finally(incrementCurrentSave);
 
-// let jDone = 0;
-// for (let j = 0; j < portSeeds.length; j++) {
-//   portSeeds[j].save(function(err, result) {
-//     jDone++;
-//   });
-// }
+new Portfolio(portfolio1)
+  .save()
+  .then(successfulSave, failedSave)
+  .finally(incrementCurrentSave);
 
-// if (iDone === 3 && jDone === 3) {
-//   exit();
-// }
+new Portfolio(portfolio2)
+  .save()
+  .then(successfulSave, failedSave)
+  .finally(incrementCurrentSave);
 
-// function exit() {
-//   mongoose.disconnect();
-// }
+new Portfolio(portfolio3)
+  .save()
+  .then(successfulSave, failedSave)
+  .finally(incrementCurrentSave);
