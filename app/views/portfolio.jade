@@ -1,6 +1,24 @@
 doctype html
 html
   head
+    title Flex - Responsive HTML Template;
+
+    meta(name='description', content='')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800', rel='stylesheet', type='text/css')
+
+    prepend stylesheets
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/font-awesome.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/animate.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/templatemo_misc.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/templatemo_style.css')
+
+    append jscripts
+      script(src='../../portfolio_templates/templatemo_406_flex/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js')
+
   body
-    script(type='text/javascript', src='/javascripts/bundle.js')
-      console.log(user)
+    p #{user}
+    p #{company}
