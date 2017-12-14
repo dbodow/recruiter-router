@@ -34,13 +34,12 @@ class SessionForm extends React.Component {
   nameField() {
     if (this.props.formType === 'register') {
       return (
-        <label>Name:
-          <input type="text"
-            value={this.state.name}
-            onChange={this.update('name')}
-            className="login-input"
-          />
-        </label>
+        <input type="text"
+          placeholder="Enter full name"
+          value={this.state.name}
+          onChange={this.update('name')}
+          className="login-input"
+        />
       );
     }
   }
@@ -68,32 +67,32 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h1>Welcome to RecruiterRouter!</h1>
-          <h2>Please {this.props.formType}</h2>
-          {this.renderErrors()}
-          <div className="login-form">
-            {this.nameField()}
-            <label>Username:
+      <main className="main">
+        <div className="login-form-container max-width">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <h1>Welcome to RecruiterRouter!</h1>
+            <h2>Please {this.props.formType}</h2>
+            {this.renderErrors()}
+            <div className="login-form">
+              {this.nameField()}
               <input type="text"
+                placeholder="Enter username"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
               />
-            </label>
-            <label>Password:
               <input type="password"
+                placeholder="Enter password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            </label>
-            <input type="submit" value="Submit" />
-          </div>
-          <h3>{this.navLink()}</h3>
-        </form>
-      </div>
+              <input type="submit" value="Submit" />
+            </div>
+            <h3>{this.navLink()}</h3>
+          </form>
+        </div>
+      </main>
     );
   }
 }

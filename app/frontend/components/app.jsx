@@ -15,7 +15,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
     <header>
-      <div className="max-width">
+      <div className="max-width heading">
         <Link to="/" className="header-link">
           <h1>RecruiterRouter</h1>
         </Link>
@@ -26,6 +26,12 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/register" component={SessionFormContainer} />
     </Switch>
+    <footer>
+      <div className="max-width footer">
+        <p>Site by Adeel Ahmad, Alvin James Delos Santos, and David Bodow.</p>
+        <p>Portfolio templates modified from original versions at <a href="http://www.templatemo.com/">Templatemo</a>.</p>
+      </div>
+    </footer>
   </div>
 );
 
