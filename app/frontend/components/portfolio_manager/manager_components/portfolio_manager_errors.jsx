@@ -16,7 +16,7 @@ export default class PortfolioManagerErrors extends React.Component {
       return null;
     } else {
       return (
-        <div className="pm-errors-box">
+        <div className="pm-errors-box pm-flex-3 max-width">
           <ul className="pm-errors-ul">{this.renderErrors()}</ul>
         </div>
       );

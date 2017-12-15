@@ -409,9 +409,46 @@ footer {
 /* --- Portfolio Manager --- */
 /* Main */
 
-.pm-main-container {
+.pm-container h2 {
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.pm-container,
+.pm-flex-1,
+.pm-flex-2,
+.pm-flex-3,
+.pm-main-container,
+.pm-aside-container {
+  display: flex;
+  border: 1px dashed red;
+}
+
+.pm-flex-1,
+.pm-flex-3 {
+  flex: 1;
+}
+
+.pm-flex-2 {
+  flex: 7;
+}
+
+.pm-flex-2a {
+  flex: 1;
+}
+
+.pm-flex-2b {
+  flex: 3;
+}
+
+.pm-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   box-sizing: border-box;
   height: 100%;
   min-height: 900px;
-  padding: 20px 40px;
+  padding: 50px 0;
 }

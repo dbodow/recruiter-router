@@ -1,5 +1,8 @@
 import React from "react";
-import PortfolioManagerErrors from "./portfolio-manager-components/portfolio_manager_errors";
+import PortfolioManagerHeader from "./manager_components/portfolio_manager_header";
+import PortfolioManagerAside from "./manager_components/portfolio_manager_aside";
+import PortfolioManagerMain from "./manager_components/portfolio_manager_main";
+import PortfolioManagerErrors from "./manager_components/portfolio_manager_errors";
 
 class PortfolioManager extends React.Component {
   componentDidMount() {
@@ -14,8 +17,13 @@ class PortfolioManager extends React.Component {
       console.log(this.props);
 
       return (
-        <div className="pm-main-container max-width">
-          <h2>Portfolio Manager</h2>
+        <div className="pm-container max-width">
+          <PortfolioManagerHeader />
+          <div className="pm-main-box pm-flex-2 max-width">
+            <PortfolioManagerAside analytics={this.props.portfolio.analytics} />
+            <PortfolioManagerMain analytics={this.props.analytics} />
+          </div>
+          <PortfolioManagerErrors errors={this.props.errors} />
         </div>
       );
     }
