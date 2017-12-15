@@ -1,4 +1,5 @@
 import * as portfolioApiUtil from "../util/portfolio-manager_api_util";
+import { fetchPortfolio } from "../actions/entities_actions";
 import { login, register, logout } from "../actions/session_actions";
 
 const debugMode = store => {
@@ -10,6 +11,7 @@ const debugMode = store => {
   window.logout = logout;
 
   window.fetchPortfolioApi = portfolioApiUtil.fetchPortfolio;
+  window.fetchPortfolio = fetchPortfolio;
 };
 
 export default debugMode;

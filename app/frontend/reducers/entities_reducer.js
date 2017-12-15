@@ -1,8 +1,6 @@
-import merge from 'lodash/merge';
+import merge from "lodash/merge";
 
-import {
-  RECEIVE_PORTFOLIO
-} from '../actions/entities_actions';
+import { RECEIVE_PORTFOLIO } from "../actions/entities_actions";
 
 const _nullEntities = Object.freeze({
   entities: {
@@ -12,12 +10,10 @@ const _nullEntities = Object.freeze({
 
 const entitiesReducer = (state = _nullEntities, action) => {
   Object.freeze(state);
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_PORTFOLIO:
       const portfolio = action.portfolio;
-      return merge({}, { entities: {
-        portfolio
-      } });
+      return merge({}, portfolio);
     default:
       return state;
   }
