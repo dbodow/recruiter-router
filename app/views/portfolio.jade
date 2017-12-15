@@ -57,11 +57,11 @@ html.no-js
                     li.active
                       a(href='#') Home
                     li
-                      a(href='#services') Services
+                      a(href='#services') Projects
                     li
                       a(href='#portfolio') Portfolio
                     li
-                      a(href='#our-team') Team
+                      a(href='#our-team') Skills
                     li
                       a(href='#contact') Contact
                 // /.main-menu
@@ -78,8 +78,8 @@ html.no-js
                 .overlay
                 img(src='https://lh3.googleusercontent.com/_uByFovnEZ2oUsodp1hcPu0ef0Y6LKJDhCpBbR6x6qLsXYvT30Wvh3r3EDWttWByW4TOvs4F64YtCX8LH5X9tUPwIa2mw-BIRT_QMb73z60j67NgtNqx7FJfQFhxeNqrcEmZDQNR0yLS8U5rsLG_S0TILd2xp5b8qnfdiW10p5aAqJ37jNdJY_KlvCh8Xd_CYqz7ewtSzCeEkyDGIjAEGZN9gCahZxrqxfVj_izpH_XeJ25evchTbjlRJzd36WfEsELiRqKpiiIojOMO5dnTMkNE3y8ZRdf-EiDasngLfYP4fqfvgUlYzKFc-C6b73QtT0Fwg91VwoXImYRpj-xhUR0KFlb7JqBcPN5vOheZYS2kft08nkwUtAo5ECxuFp6BAonUb_TSPm1hf0-Oj2oBitvfbh3XZnh3xfZffU4W01PHJZNaxZa-W3Gi9MRqRQ7Olk9KNiPIuvm-uR2ufbasP-VrzLU6jQ5C6oHfvU2eP1aWtgQypO5OzSvvNpVsr8fiJN2wQ3DaMLgzfUR0n83EGx8AYZJ1YSAwdAN_qLNIlX-BuuU3-Vsxx_6yKnHEuKCHUiO13pF1pDRen9lCgalrDwqWkA8nQNzX0cvW7xzIlnw=w1484-h990-no', alt='')
                 .slider-caption.visible-md.visible-lg
-                  h2 Digital Marketing
-                  p more visitors to your website
+                  h2 #{tag.heroSection.title}
+                  p #{tag.heroSection.subtitle}
                   a.slider-btn(href='#') Welcome #{company}
           // /.flexslider
         // /.slider
@@ -89,12 +89,15 @@ html.no-js
       .container
         .row
           .heading-section.col-md-12.text-center
-            h2 Our Services
-            p We design mobile-first websites for you
-            p #{port.username}
-            p #{company}
+            h2 Projects
           // /.heading-section
         // /.row
+        script(type='text/javascript').
+        - for (var i = 0; i < 3; ++i) {
+          p !{JSON.stringify(tag.projectsSection[i].projectTitle)};
+          p !{JSON.stringify(tag.projectsSection[i].projectDescription)};
+        - }
+
         .row
           .col-md-3.col-sm-6
             #service-1.service-item
@@ -103,9 +106,8 @@ html.no-js
               // /.service-icon
               .service-content
                 .inner-service
-                  h3 HTML5 Coding
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
+                  h3 #{tag.projectsSection[0].projectTitle}
+                  p #{tag.projectsSection[0].projectDescription}
               // /.service-content
             // /#service-1
           // /.col-md-3
@@ -155,8 +157,7 @@ html.no-js
       .container
         .row
           .heading-section.col-md-12.text-center
-            h2 Our Portfolio
-            p Amazing work for our clients
+            h2 Experience
           // /.heading-section
         // /.row
         .row
@@ -255,8 +256,7 @@ html.no-js
       .container
         .row
           .heading-section.col-md-12.text-center
-            h2 Our Team
-            p Our people are very united for your success
+            h2 Skills
           // /.heading-section
         // /.row
         .row
@@ -366,7 +366,7 @@ html.no-js
         .row
           .heading-section.col-md-12.text-center
             h2 Contact
-            p Send a message to us
+            p Send a message
           // /.heading-section
         // /.row
         .row
@@ -378,19 +378,6 @@ html.no-js
         // /.row
         .row
           .col-md-7.col-sm-6
-            p
-              | Flex is a Bootstrap v3.1.1 HTML CSS web template by
-              span.blue template
-              span.green mo
-              | . Slider images and portfolio images are from
-              a(rel='nofollow', href='http://unsplash.com', target='_parent') Unsplash
-              |  website. Thank you for visiting. Please tell your friends about templatemo.
-              br
-              br
-              |                         Hic, suscipit, praesentium earum quod ea distinctio impedit ullam deserunt minus dolore quibusdam quis saepe aliquam doloribus voluptatibus eum excepturi. Aenean semper erat neque. Nunc et scelerisque nunc, in adipiscing magna.
-              br
-              br
-              | 				    Duis ullamcorper tortor tellus. Ut diam libero, ultricies non augue a, mollis congue risus. Fusce a quam eget nisi luctus imperdiet. Consectetur quod at aperiam corporis totam. Nesciunt minima laborum sapiente totam facere unde est cum quia.
             ul.contact-info
               li Phone: 033-033-0660
               li
@@ -422,7 +409,6 @@ html.no-js
       .container
         .row
           .col-md-8.col-xs-12.text-left
-            span Copyright © 2014 Company Name
           // /.text-center
           .col-md-4.hidden-xs.text-right
             a#go-top(href='#top') Back to top
