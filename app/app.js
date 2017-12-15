@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/recruiter-router', {useMongoClient: true})
   .then(() => console.log('connection successful'))
   .catch((err) => console.err(err));
-  
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
