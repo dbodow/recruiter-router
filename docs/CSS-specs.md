@@ -34,7 +34,7 @@
 ## Layout
 
 * Whitespace: 5px, 10px, 20px
-* Total Size Container: (900px?)
+* Total Size Container: 1025px
 * Total Size Sidebar: (240px?)
 * Total Size Content: (660px?)
 
