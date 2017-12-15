@@ -1,4 +1,4 @@
-import * as portfolioApiUtil from "../util/portfolio_api_util";
+import * as portfolioApiUtil from "../util/portfolio-manager_api_util";
 import { login, register, logout } from "../actions/session_actions";
 
 const debugMode = store => {

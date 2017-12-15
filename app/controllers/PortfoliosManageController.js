@@ -1,35 +1,24 @@
 const Portfolio = require("../models/portfolio");
+const User = require("../models/User");
 const mongoose = require("mongoose");
 const passport = require("passport");
 
 const portfoliosManageController = {};
 
-portfoliosManageController.getPortfolio = async (req, res) => {
-  try {
-    const username = req.user.username;
-    return await res
-      .status(200)
-      .json({ portfolio: Portfolio.findOne({ username }) });
-  } catch (e) {
-    return res.status(e.status).json(["Portfolio not found"]);
-  }
-  // passport.authenticate("local", (err, user, info) => {
-  //   if (err) {
-  //     res.status(500);
-  //     return res.json(["Internal Server Error"]);
-  //   }
+portfoliosManageController.getPortfolio = (req, res) => {
+  const username = req.user.username;
 
-  //   if (!user) {
-  //     // Authentication failed
-  //     return res.status(401).json([info.message]);
-  //   }
+  const returnPortfolio = portfolio => {
+    return res.status(200).json({ portfolio });
+  };
 
-  //   req.login(user, async loginErr => {
-  //     if (loginErr) {
-  //       return res.status(401).json(["Portfolio not found"]);
-  //     }
-  //   });
-  // })(req, res);
+  const returnError = e => {
+    return res.status(e.status).json(["Cannot find portfolio"]);
+  };
+
+  const portfolio = Portfolio.findOne({ username })
+    .exec()
+    .then(returnPortfolio, returnError);
 };
 
 module.exports = portfoliosManageController;
