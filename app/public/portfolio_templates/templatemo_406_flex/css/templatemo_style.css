@@ -381,18 +381,19 @@ hr {
 .flexslider .slider-caption p {
   color: white;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 24px;
   margin-top: 20px;
   margin-bottom: 26px;
   display: block;
 }
 .flexslider .slider-caption a.slider-btn {
+  position:relative;
   color: white;
-  background-color: #ec523f;
+  font-size: 24px;
+  width: 300px;
   padding: 12px 20px;
   border-radius: 4px;
   text-transform: uppercase;
-  font-weight: 700;
 }
 @media screen and (min-width: 989px) {
   .flexslider .slider-caption {
@@ -785,6 +786,10 @@ hr {
 
 #footer {
   margin-top: 130px;
+}
+
+.flexslider .slider-caption a.slider-btn:hover {
+  cursor: inherit;
 }
 
 /*

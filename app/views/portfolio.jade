@@ -1,13 +1,13 @@
 doctype html
-html
+html.no-js
   head
     meta(charset='utf-8')
     title Flex - Responsive HTML Template;
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800', rel='stylesheet', type='text/css')
 
     prepend stylesheets
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800', rel='stylesheet', type='text/css')
       link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/bootstrap.min.css')
       link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/font-awesome.css')
       link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/animate.css')
@@ -15,462 +15,448 @@ html
       link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/templatemo_style.css')
 
     append jscripts
-      script(src='/portfolio_templates/templatemo_406_flex/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js')
+      script(type='text/javascript' src='/portfolio_templates/templatemo_406_flex/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js')
 
-      body
-         //if lt IE 7
-           p.chromeframe
-             | You are using an outdated browser.
-             a(href='http://browsehappy.com/') Upgrade your browser today
-             |  or
-             a(href='http://www.google.com/chromeframe/?redirect=true') install Google Chrome Frame
-             |  to better experience this site.
-         #sTop.site-main
-           .site-header
-             .container
-               .row
-                 .col-md-12.text-center
-                   ul.social-icons
-                     li
-                       a.fa.fa-facebook(href='#')
-                     li
-                       a.fa.fa-twitter(href='#')
-                     li
-                       a.fa.fa-dribbble(href='#')
-                     li
-                       a.fa.fa-linkedin(href='#')
-                 // /.col-md-12
-               // /.row
-             // /.container
-             .main-header
-               .container
-                 #menu-wrapper
-                   .row
-                     .logo-wrapper.col-md-2.col-sm-2
-                       h1
-                         a(href='#') Flex
-                     // /.logo-wrapper
-                     .col-md-10.col-sm-10.main-menu.text-right
-                       .toggle-menu.visible-sm.visible-xs
-                         i.fa.fa-bars
-                       ul.menu-first
-                         li.active
-                           a(href='#') Home
-                         li
-                           a(href='#services') Services
-                         li
-                           a(href='#portfolio') Portfolio
-                         li
-                           a(href='#our-team') Team
-                         li
-                           a.external(href='http://plus.facebook.com/+templatemo', target='_parent', rel='nofollow') External
-                         li
-                           a(href='#contact') Contact
-                     // /.main-menu
-                   // /.row
-                 // /#menu-wrapper
-               // /.container
-             // /.main-header
-           // /.site-header
-           .site-slider
-             .slider
-               .flexslider
-                 ul.slides
-                   li
-                     .overlay
-                     img(src='images/slide1.jpg', alt='')
-                     .slider-caption.visible-md.visible-lg
-                       h2 Digital Marketing
-                       p more visitors to your website
-                       a.slider-btn(href='#') Let us design!
-                   li
-                     .overlay
-                     img(src='images/slide2.jpg', alt='')
-                     .slider-caption.visible-md.visible-lg
-                       h2 Responsive HTML CSS
-                       p Download and use it for your site
-                       a.slider-btn(href='#') Go to Portfolio
-                   li
-                     .overlay
-                     img(src='images/slide3.jpg', alt='')
-                     .slider-caption.visible-md.visible-lg
-                       h2 Pro Level Design
-                       p High standard work
-                       a.slider-btn(href='#') Mobile Website
-               // /.flexslider
-             // /.slider
-           // /.site-slider
-         // /.site-main
-         #services.content-section
-           .container
-             .row
-               .heading-section.col-md-12.text-center
-                 h2 Our Services
-                 p We design mobile-first websites for you
-               // /.heading-section
-             // /.row
-             .row
-               .col-md-3.col-sm-6
-                 #service-1.service-item
-                   .service-icon
-                     i.fa.fa-file-code-o
-                   // /.service-icon
-                   .service-content
-                     .inner-service
-                       h3 HTML5 Coding
-                       p
-                         | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
-                   // /.service-content
-                 // /#service-1
-               // /.col-md-3
-               .col-md-3.col-sm-6
-                 #service-2.service-item
-                   .service-icon
-                     i.fa.fa-paper-plane-o
-                   // /.service-icon
-                   .service-content
-                     .inner-service
-                       h3 Our Support
-                       p
-                         | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
-                   // /.service-content
-                 // /#service-1
-               // /.col-md-3
-               .col-md-3.col-sm-6
-                 #service-3.service-item
-                   .service-icon
-                     i.fa.fa-institution
-                   // /.service-icon
-                   .service-content
-                     .inner-service
-                       h3 Our Design
-                       p
-                         | We make HTML CSS templates that are responsive for any screen size on any device. Feel free to download and use our templates without restrictions.
-                   // /.service-content
-                 // /#service-1
-               // /.col-md-3
-               .col-md-3.col-sm-6
-                 #service-4.service-item
-                   .service-icon
-                     i.fa.fa-flask
-                   // /.service-icon
-                   .service-content
-                     .inner-service
-                       h3 Go for mobile
-                       p
-                         | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
-                   // /.service-content
-                 // /#service-1
-               // /.col-md-3
-             // /.row
-           // /.container
-         // /#services
-         #portfolio.content-section
-           .container
-             .row
-               .heading-section.col-md-12.text-center
-                 h2 Our Portfolio
-                 p Amazing work for our clients
-               // /.heading-section
-             // /.row
-             .row
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p1.jpg', alt='')
-                   .portfolio-overlay
-                     h3 New Walk
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p1.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p2.jpg', alt='')
-                   .portfolio-overlay
-                     h3 Boat
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p2.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p7.jpg', alt='')
-                   .portfolio-overlay
-                     h3 Urban
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p7.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p8.jpg', alt='')
-                   .portfolio-overlay
-                     h3 Cycling
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p8.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p3.jpg', alt='')
-                   .portfolio-overlay
-                     h3 Digital Era
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p3.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p4.jpg', alt='')
-                   .portfolio-overlay
-                     h3 Horizon
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p4.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p5.jpg', alt='')
-                   .portfolio-overlay
-                     h3 Aquatic City
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p5.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-               .portfolio-item.col-md-3.col-sm-6
-                 .portfolio-thumb
-                   img(src='images/gallery/p6.jpg', alt='')
-                   .portfolio-overlay
-                     h3 New Path
-                     p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                     a.expand(href='images/gallery/p6.jpg', data-rel='lightbox')
-                       i.fa.fa-search
-                   // /.portfolio-overlay
-                 // /.portfolio-thumb
-               // /.portfolio-item
-             // /.row
-           // /.container
-         // /#portfolio
-         #our-team.content-section
-           .container
-             .row
-               .heading-section.col-md-12.text-center
-                 h2 Our Team
-                 p Our people are very united for your success
-               // /.heading-section
-             // /.row
-             .row
-               .team-member.col-md-3.col-sm-6
-                 .member-thumb
-                   img(src='images/member1.jpg', alt='')
-                   .team-overlay
-                     h3 Tracy
-                     span Designer
-                     ul.social
-                       li
-                         a.fa.fa-facebook(href='#')
-                       li
-                         a.fa.fa-twitter(href='#')
-                       li
-                         a.fa.fa-linkedin(href='#')
-                   // /.team-overlay
-                 // /.member-thumb
-               // /.team-member
-               .team-member.col-md-3.col-sm-6
-                 .member-thumb
-                   img(src='images/member2.jpg', alt='')
-                   .team-overlay
-                     h3 Cindy
-                     span Developer
-                     ul.social
-                       li
-                         a.fa.fa-facebook(href='#')
-                       li
-                         a.fa.fa-twitter(href='#')
-                       li
-                         a.fa.fa-linkedin(href='#')
-                   // /.team-overlay
-                 // /.member-thumb
-               // /.team-member
-               .team-member.col-md-3.col-sm-6
-                 .member-thumb
-                   img(src='images/member3.jpg', alt='')
-                   .team-overlay
-                     h3 Mary
-                     span Director
-                     ul.social
-                       li
-                         a.fa.fa-facebook(href='#')
-                       li
-                         a.fa.fa-twitter(href='#')
-                       li
-                         a.fa.fa-linkedin(href='#')
-                   // /.team-overlay
-                 // /.member-thumb
-               // /.team-member
-               .team-member.col-md-3.col-sm-6
-                 .member-thumb
-                   img(src='images/member4.jpg', alt='')
-                   .team-overlay
-                     h3 Linda
-                     span Chief Executive
-                     ul.social
-                       li
-                         a.fa.fa-facebook(href='#')
-                       li
-                         a.fa.fa-twitter(href='#')
-                       li
-                         a.fa.fa-linkedin(href='#')
-                   // /.team-overlay
-                 // /.member-thumb
-               // /.team-member
-             // /.row
-             .row
-               .col-md-12.text-center
-                 .skills-heading
-                   h3.skills-title Design Skills
-                   p.small-text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               // /.col-md-12
-             // /.row
-             .row
-               .col-md-8.col-sm-6
-                 p
-                   | Aliquam faucibus in dolor sed vestibulum. Sed adipiscing malesuada luctus. Morbi tincidunt, tellus scelerisque scelerisque scelerisque, sapien dui pretium augue, at consectetur sapien tellus vitae nunc. Ut vitae metus quis nulla cursus adipiscing pretium vel dolor. Fusce lacinia accumsan arcu, quis porttitor nisi tincidunt ut. Nunc malesuada nunc eget nunc sollicitudin posuere. Maecenas vitae tortor quis odio hendrerit sagittis.
-                   br
-                   br
-                   | 						Etiam tincidunt, magna eu elementum tristique, sapien nisl venenatis lacus, nec sagittis lectus dui eget lorem. Donec in tempus mi. Aenean egestas interdum dolor, et mollis lectus consequat. Mauris ullamcorper, felis sit amet gravida malesuada, nisi sem rhoncus massa, non tempor est erat sit amet diam.
-                   // spacing for mobile viewing
-                   br
-                   br
-               // /.col-md-8
-               .col-md-4.col-sm-6
-                 ul.progess-bars
-                   li
-                     .progress
-                       .progress-bar(role='progressbar', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100', style='width: 90%;') Photoshop 90%
-                   li
-                     .progress
-                       .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;') HTML CSS 80%
-                   li
-                     .progress
-                       .progress-bar(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100', style='width: 70%;') Development 70%
-                   li
-                     .progress
-                       .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;') Marketing 80%
-               // /.col-md-4
-             // /.row
-           // /.container
-         // /#our-team
-         #contact.content-section
-           .container
-             .row
-               .heading-section.col-md-12.text-center
-                 h2 Contact
-                 p Send a message to us
-               // /.heading-section
-             // /.row
-             .row
-               .col-md-12
-                 .googlemap-wrapper
-                   #map_canvas.map-canvas
-                 // /.googlemap-wrapper
-               // /.col-md-12
-             // /.row
-             .row
-               .col-md-7.col-sm-6
-                 p
-                   | Flex is a Bootstrap v3.1.1 HTML CSS web template by
-                   span.blue template
-                   span.green mo
-                   | . Slider images and portfolio images are from
-                   a(rel='nofollow', href='http://unsplash.com', target='_parent') Unsplash
-                   |  website. Thank you for visiting. Please tell your friends about templatemo.
-                   br
-                   br
-                   |                         Hic, suscipit, praesentium earum quod ea distinctio impedit ullam deserunt minus dolore quibusdam quis saepe aliquam doloribus voluptatibus eum excepturi. Aenean semper erat neque. Nunc et scelerisque nunc, in adipiscing magna.
-                   br
-                   br
-                   | 				    Duis ullamcorper tortor tellus. Ut diam libero, ultricies non augue a, mollis congue risus. Fusce a quam eget nisi luctus imperdiet. Consectetur quod at aperiam corporis totam. Nesciunt minima laborum sapiente totam facere unde est cum quia.
-                 ul.contact-info
-                   li Phone: 033-033-0660
-                   li
-                     | Email:
-                     a(href='mailto:info@company.com') info@company.com
-                   li Address: 880 De Best Studio, Fork Street, San Francisco
-                 // spacing for mobile viewing
-                 br
-                 br
-               // /.col-md-7
-               .col-md-5.col-sm-6
-                 .contact-form
-                   form#contactform(method='post', name='contactform')
-                     p
-                       input#name(name='name', type='text', placeholder='Your Name')
-                     p
-                       input#email(name='email', type='text', placeholder='Your Email')
-                     p
-                       input#subject(name='subject', type='text', placeholder='Subject')
-                     p
-                       textarea#comments(name='comments', placeholder='Message')
-                     input#submit.mainBtn(type='submit', value='Send Message')
-                 // /.contact-form
-               // /.col-md-5
-             // /.row
-           // /.container
-         // /#contact
-         #footer
-           .container
-             .row
-               .col-md-8.col-xs-12.text-left
-                 span Copyright © 2014 Company Name
-               // /.text-center
-               .col-md-4.hidden-xs.text-right
-                 a#go-top(href='#top') Back to top
-               // /.text-center
-             // /.row
-           // /.container
-         // /#footer
-         script(src='js/vendor/jquery-1.11.0.min.js')
-         script.
-           window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\\/script>')
-         script(src='js/bootstrap.js')
-         script(src='js/plugins.js')
-         script(src='js/main.js')
-         // Google Map
-         script(src='http://maps.google.com/maps/api/js?sensor=true')
-         script(src='js/vendor/jquery.gmap3.min.js')
-         // Google Map Init
-         script(type='text/javascript').
-           jQuery(function($){
-           $('#map_canvas').gmap3({
-           marker:{
-           address: '37.769725, -122.462154'
-           },
-           map:{
-           options:{
-           zoom: 15,
-           scrollwheel: false,
-           streetViewControl : true
-           }
-           }
-           });
-           /* Simulate hover on iPad
-           * http://stackoverflow.com/questions/2851663/how-do-i-simulate-a-hover-with-a-touch-in-touch-enabled-browsers
-           --------------------------------------------------------------------------------------------------------------*/
-           $('body').bind('touchstart', function() {});
-           });
-         // templatemo 406 flex
+  body
+    //if lt IE 7
+      p.chromeframe
+        | You are using an outdated browser.
+        a(href='http://browsehappy.com/') Upgrade your browser today
+        |  or
+        a(href='http://www.google.com/chromeframe/?redirect=true') install Google Chrome Frame
+        |  to better experience this site.
+    #sTop.site-main
+      .site-header
+        .container
+          .row
+            .col-md-12.text-center
+              ul.social-icons
+                li
+                  a.fa.fa-facebook(href='#')
+                li
+                  a.fa.fa-twitter(href='#')
+                li
+                  a.fa.fa-dribbble(href='#')
+                li
+                  a.fa.fa-linkedin(href='#')
+            // /.col-md-12
+          // /.row
+        // /.container
+        .main-header
+          .container
+            #menu-wrapper
+              .row
+                .logo-wrapper.col-md-2.col-sm-2
+                  h1
+                    a(href='#') Flex
+                // /.logo-wrapper
+                .col-md-10.col-sm-10.main-menu.text-right
+                  .toggle-menu.visible-sm.visible-xs
+                    i.fa.fa-bars
+                  ul.menu-first
+                    li.active
+                      a(href='#') Home
+                    li
+                      a(href='#services') Services
+                    li
+                      a(href='#portfolio') Portfolio
+                    li
+                      a(href='#our-team') Team
+                    li
+                      a(href='#contact') Contact
+                // /.main-menu
+              // /.row
+            // /#menu-wrapper
+          // /.container
+        // /.main-header
+      // /.site-header
+      .site-slider
+        .slider
+          .flexslider
+            ul.slides
+              li
+                .overlay
+                img(src='https://lh3.googleusercontent.com/_uByFovnEZ2oUsodp1hcPu0ef0Y6LKJDhCpBbR6x6qLsXYvT30Wvh3r3EDWttWByW4TOvs4F64YtCX8LH5X9tUPwIa2mw-BIRT_QMb73z60j67NgtNqx7FJfQFhxeNqrcEmZDQNR0yLS8U5rsLG_S0TILd2xp5b8qnfdiW10p5aAqJ37jNdJY_KlvCh8Xd_CYqz7ewtSzCeEkyDGIjAEGZN9gCahZxrqxfVj_izpH_XeJ25evchTbjlRJzd36WfEsELiRqKpiiIojOMO5dnTMkNE3y8ZRdf-EiDasngLfYP4fqfvgUlYzKFc-C6b73QtT0Fwg91VwoXImYRpj-xhUR0KFlb7JqBcPN5vOheZYS2kft08nkwUtAo5ECxuFp6BAonUb_TSPm1hf0-Oj2oBitvfbh3XZnh3xfZffU4W01PHJZNaxZa-W3Gi9MRqRQ7Olk9KNiPIuvm-uR2ufbasP-VrzLU6jQ5C6oHfvU2eP1aWtgQypO5OzSvvNpVsr8fiJN2wQ3DaMLgzfUR0n83EGx8AYZJ1YSAwdAN_qLNIlX-BuuU3-Vsxx_6yKnHEuKCHUiO13pF1pDRen9lCgalrDwqWkA8nQNzX0cvW7xzIlnw=w1484-h990-no', alt='')
+                .slider-caption.visible-md.visible-lg
+                  h2 Digital Marketing
+                  p more visitors to your website
+                  a.slider-btn(href='#') Welcome #{company}
+          // /.flexslider
+        // /.slider
+      // /.site-slider
+    // /.site-main
+    #services.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Our Services
+            p We design mobile-first websites for you
+            p #{port.username}
+            p #{company}
+          // /.heading-section
+        // /.row
+        .row
+          .col-md-3.col-sm-6
+            #service-1.service-item
+              .service-icon
+                i.fa.fa-file-code-o
+              // /.service-icon
+              .service-content
+                .inner-service
+                  h3 HTML5 Coding
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
+              // /.service-content
+            // /#service-1
+          // /.col-md-3
+          .col-md-3.col-sm-6
+            #service-2.service-item
+              .service-icon
+                i.fa.fa-paper-plane-o
+              // /.service-icon
+              .service-content
+                .inner-service
+                  h3 Our Support
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
+              // /.service-content
+            // /#service-1
+          // /.col-md-3
+          .col-md-3.col-sm-6
+            #service-3.service-item
+              .service-icon
+                i.fa.fa-institution
+              // /.service-icon
+              .service-content
+                .inner-service
+                  h3 Our Design
+                  p
+                    | We make HTML CSS templates that are responsive for any screen size on any device. Feel free to download and use our templates without restrictions.
+              // /.service-content
+            // /#service-1
+          // /.col-md-3
+          .col-md-3.col-sm-6
+            #service-4.service-item
+              .service-icon
+                i.fa.fa-flask
+              // /.service-icon
+              .service-content
+                .inner-service
+                  h3 Go for mobile
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
+              // /.service-content
+            // /#service-1
+          // /.col-md-3
+        // /.row
+      // /.container
+    // /#services
+    #portfolio.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Our Portfolio
+            p Amazing work for our clients
+          // /.heading-section
+        // /.row
+        .row
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p1.jpg', alt='')
+              .portfolio-overlay
+                h3 New Walk
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p1.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p2.jpg', alt='')
+              .portfolio-overlay
+                h3 Boat
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p2.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p7.jpg', alt='')
+              .portfolio-overlay
+                h3 Urban
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p7.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p8.jpg', alt='')
+              .portfolio-overlay
+                h3 Cycling
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p8.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p3.jpg', alt='')
+              .portfolio-overlay
+                h3 Digital Era
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p3.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p4.jpg', alt='')
+              .portfolio-overlay
+                h3 Horizon
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p4.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p5.jpg', alt='')
+              .portfolio-overlay
+                h3 Aquatic City
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p5.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p6.jpg', alt='')
+              .portfolio-overlay
+                h3 New Path
+                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
+                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p6.jpg', data-rel='lightbox')
+                  i.fa.fa-search
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+        // /.row
+      // /.container
+    // /#portfolio
+    #our-team.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Our Team
+            p Our people are very united for your success
+          // /.heading-section
+        // /.row
+        .row
+          .team-member.col-md-3.col-sm-6
+            .member-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/member1.jpg', alt='')
+              .team-overlay
+                h3 Tracy
+                span Designer
+                ul.social
+                  li
+                    a.fa.fa-facebook(href='#')
+                  li
+                    a.fa.fa-twitter(href='#')
+                  li
+                    a.fa.fa-linkedin(href='#')
+              // /.team-overlay
+            // /.member-thumb
+          // /.team-member
+          .team-member.col-md-3.col-sm-6
+            .member-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/member2.jpg', alt='')
+              .team-overlay
+                h3 Cindy
+                span Developer
+                ul.social
+                  li
+                    a.fa.fa-facebook(href='#')
+                  li
+                    a.fa.fa-twitter(href='#')
+                  li
+                    a.fa.fa-linkedin(href='#')
+              // /.team-overlay
+            // /.member-thumb
+          // /.team-member
+          .team-member.col-md-3.col-sm-6
+            .member-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/member3.jpg', alt='')
+              .team-overlay
+                h3 Mary
+                span Director
+                ul.social
+                  li
+                    a.fa.fa-facebook(href='#')
+                  li
+                    a.fa.fa-twitter(href='#')
+                  li
+                    a.fa.fa-linkedin(href='#')
+              // /.team-overlay
+            // /.member-thumb
+          // /.team-member
+          .team-member.col-md-3.col-sm-6
+            .member-thumb
+              img(src='/portfolio_templates/templatemo_406_flex/images/member4.jpg', alt='')
+              .team-overlay
+                h3 Linda
+                span Chief Executive
+                ul.social
+                  li
+                    a.fa.fa-facebook(href='#')
+                  li
+                    a.fa.fa-twitter(href='#')
+                  li
+                    a.fa.fa-linkedin(href='#')
+              // /.team-overlay
+            // /.member-thumb
+          // /.team-member
+        // /.row
+        .row
+          .col-md-12.text-center
+            .skills-heading
+              h3.skills-title Design Skills
+              p.small-text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          // /.col-md-12
+        // /.row
+        .row
+          .col-md-8.col-sm-6
+            p
+              | Aliquam faucibus in dolor sed vestibulum. Sed adipiscing malesuada luctus. Morbi tincidunt, tellus scelerisque scelerisque scelerisque, sapien dui pretium augue, at consectetur sapien tellus vitae nunc. Ut vitae metus quis nulla cursus adipiscing pretium vel dolor. Fusce lacinia accumsan arcu, quis porttitor nisi tincidunt ut. Nunc malesuada nunc eget nunc sollicitudin posuere. Maecenas vitae tortor quis odio hendrerit sagittis.
+              br
+              br
+              | 						Etiam tincidunt, magna eu elementum tristique, sapien nisl venenatis lacus, nec sagittis lectus dui eget lorem. Donec in tempus mi. Aenean egestas interdum dolor, et mollis lectus consequat. Mauris ullamcorper, felis sit amet gravida malesuada, nisi sem rhoncus massa, non tempor est erat sit amet diam.
+              // spacing for mobile viewing
+              br
+              br
+          // /.col-md-8
+          .col-md-4.col-sm-6
+            ul.progess-bars
+              li
+                .progress
+                  .progress-bar(role='progressbar', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100', style='width: 90%;') Photoshop 90%
+              li
+                .progress
+                  .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;') HTML CSS 80%
+              li
+                .progress
+                  .progress-bar(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100', style='width: 70%;') Development 70%
+              li
+                .progress
+                  .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;') Marketing 80%
+          // /.col-md-4
+        // /.row
+      // /.container
+    // /#our-team
+    #contact.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Contact
+            p Send a message to us
+          // /.heading-section
+        // /.row
+        .row
+          .col-md-12
+            .googlemap-wrapper
+              #map_canvas.map-canvas
+            // /.googlemap-wrapper
+          // /.col-md-12
+        // /.row
+        .row
+          .col-md-7.col-sm-6
+            p
+              | Flex is a Bootstrap v3.1.1 HTML CSS web template by
+              span.blue template
+              span.green mo
+              | . Slider images and portfolio images are from
+              a(rel='nofollow', href='http://unsplash.com', target='_parent') Unsplash
+              |  website. Thank you for visiting. Please tell your friends about templatemo.
+              br
+              br
+              |                         Hic, suscipit, praesentium earum quod ea distinctio impedit ullam deserunt minus dolore quibusdam quis saepe aliquam doloribus voluptatibus eum excepturi. Aenean semper erat neque. Nunc et scelerisque nunc, in adipiscing magna.
+              br
+              br
+              | 				    Duis ullamcorper tortor tellus. Ut diam libero, ultricies non augue a, mollis congue risus. Fusce a quam eget nisi luctus imperdiet. Consectetur quod at aperiam corporis totam. Nesciunt minima laborum sapiente totam facere unde est cum quia.
+            ul.contact-info
+              li Phone: 033-033-0660
+              li
+                | Email:
+                a(href='mailto:info@company.com') info@company.com
+              li Address: 880 De Best Studio, Fork Street, San Francisco
+            // spacing for mobile viewing
+            br
+            br
+          // /.col-md-7
+          .col-md-5.col-sm-6
+            .contact-form
+              form#contactform(method='post', name='contactform')
+                p
+                  input#name(name='name', type='text', placeholder='Your Name')
+                p
+                  input#email(name='email', type='text', placeholder='Your Email')
+                p
+                  input#subject(name='subject', type='text', placeholder='Subject')
+                p
+                  textarea#comments(name='comments', placeholder='Message')
+                input#submit.mainBtn(type='submit', value='Send Message')
+            // /.contact-form
+          // /.col-md-5
+        // /.row
+      // /.container
+    // /#contact
+    #footer
+      .container
+        .row
+          .col-md-8.col-xs-12.text-left
+            span Copyright © 2014 Company Name
+          // /.text-center
+          .col-md-4.hidden-xs.text-right
+            a#go-top(href='#top') Back to top
+          // /.text-center
+        // /.row
+      // /.container
+    // /#footer
+    script(src='/portfolio_templates/templatemo_406_flex/js/vendor/jquery-1.11.0.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\\/script>')
+    script(src='/portfolio_templates/templatemo_406_flex/js/bootstrap.js')
+    script(src='/portfolio_templates/templatemo_406_flex/js/plugins.js')
+    script(src='/portfolio_templates/templatemo_406_flex/js/main.js')
+    // Google Map
+    script(src='http://maps.google.com/maps/api/js?sensor=true')
+    script(src='/portfolio_templates/templatemo_406_flex/js/vendor/jquery.gmap3.min.js')
+    // Google Map Init
+    script(type='text/javascript').
+      jQuery(function($){
+      $('#map_canvas').gmap3({
+      marker:{
+      address: '37.769725, -122.462154'
+      },
+      map:{
+      options:{
+      zoom: 15,
+      scrollwheel: false,
+      streetViewControl : true
+      }
+      }
+      });
+      /* Simulate hover on iPad
+      * http://stackoverflow.com/questions/2851663/how-do-i-simulate-a-hover-with-a-touch-in-touch-enabled-browsers
+      --------------------------------------------------------------------------------------------------------------*/
+      $('body').bind('touchstart', function() {});
+      });
+    // templatemo 406 flex
