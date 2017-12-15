@@ -28,7 +28,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    console.log(user, this.props.processForm);
     this.props.processForm(user);
   }
 
@@ -55,8 +54,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    // console.log(this.props.errors);
-    return (
+    return(
       <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
@@ -67,7 +65,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <main className="main">
+      <main className="main flex-center">
         <div className="login-form-container max-width">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <h1>Welcome to RecruiterRouter!</h1>
