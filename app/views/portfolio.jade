@@ -99,8 +99,8 @@ html.no-js
               .col-md-3.col-sm-6
                 #service-3.service-item
                   .service-icon
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/\"([^(\")"]+)\":/g,"$1:")}
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/\"([^(\")"]+)\":/g,"$1:")}
+                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace("", "")}
+                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace("", "")}
                     p.dates !{JSON.stringify(tag.experienceSection.experiences[i].startDate) + " - " + JSON.stringify(tag.experienceSection.experiences[i].endDate)}
                     //- i.fa.fa-file-code-o
                   // /.service-icon
