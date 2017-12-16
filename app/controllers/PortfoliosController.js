@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mongoose = require("mongoose");
 const portfoliosController = {};
 const portfolios = require("../models/portfolio");
@@ -48,5 +47,3 @@ portfoliosController.loadPorfolio = (req, res) => {
 };
 
 module.exports = portfoliosController;
-=======
->>>>>>> master
