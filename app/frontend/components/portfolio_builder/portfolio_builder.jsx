@@ -1,21 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import scrollToComponent from 'react-scroll-to-component';
 
-import PortfolioEditingTools from './portfolio_editing_tools';
-import PortfolioBuilderContent from './portfolio_builder_content';
+import HeroBuilder from './template_components/hero_builder';
+import ExperienceBuilder from './template_components/experience_builder';
+import ProjectsBuilder from './template_components/projects_builder';
+import SkillsBuilder from './template_components/skills_builder';
+import ContactBuilder from './template_components/contact_builder';
+
 
 export default class PortfolioBuilder extends React.Component {
   render() {
     return (
       <main className="main flex-start">
         <aside className="editing-tools-container">
-          <PortfolioEditingTools/>
+          {this.renderEditingTools()}
         </aside>
         <div className="editing-tools-flex-buffer">{' '}</div>
         <article className="portfolio-builder-container">
-          <PortfolioBuilderContent />
+          <HeroBuilder ref={(section) => { this.Hero = section; }} />
+          <ExperienceBuilder ref={(section) => { this.Experience = section; }} />
+          <ProjectsBuilder ref={(section) => { this.Projects = section; }} />
+          <SkillsBuilder ref={(section) => { this.Skills = section; }} />
+          <ContactBuilder ref={(section) => { this.Contact = section; }} />
         </article>
       </main>
+    );
+  }
+
+  // Must be in same component as the content components for scrolling
+  // with react-scroll-to-component without passing refs into child
+  // components which is problematic; using a helper render instead
+  // https://stackoverflow.com/questions/38864033/react-whats-the-proper-way-of-passing-a-ref-to-a-prop
+  renderEditingTools() {
+    return(
+      <div className="editing-tools">
+        <h1>Portfolio Management</h1>
+        <h2>Edit different portfolio focuses to tailor content to different job postings.</h2>
+        <button className="save-progress-btn">Save Progress</button>
+        <form className="editing-tools-tag-form">
+          <select>
+            <option defaultValue>Select a portfolio focus</option>
+            <option value="Default">Default</option>
+          </select>
+          <p>or</p>
+          <input type="text" placeholder="Choose a new focus (e.g. edutech)" className='text-input'></input>
+          <input type="submit" value="Create new portfolio focus!"></input>
+        </form>
+        <button className="delete-focus-btn">Delete current focus</button>
+        <h3>Edit a Portfolio Section:</h3>
+        <ul className="sections-list">
+          <li onClick={() => scrollToComponent(this.Hero, { offset: 0, align: 'top', duration: 500})}>Hero</li>
+          <li onClick={() => scrollToComponent(this.Experience, { offset: 0, align: 'top', duration: 500})}>Experience</li>
+          <li onClick={() => scrollToComponent(this.Projects, { offset: 0, align: 'top', duration: 500})}>Projects</li>
+          <li onClick={() => scrollToComponent(this.Skills, { offset: 0, align: 'top', duration: 500})}>Skills</li>
+          <li onClick={() => scrollToComponent(this.Contact, { offset: 0, align: 'top', duration: 500})}>Contact</li>
+        </ul>
+        <button className="preview-btn">Preview Site</button>
+      </div>
     );
   }
 }
