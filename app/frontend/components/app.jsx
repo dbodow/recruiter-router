@@ -8,9 +8,19 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-import GreetingContainer from './greeting/greeting_container';
-import SessionFormContainer from './session_form/session_form_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import GreetingContainer from
+  './greeting/greeting_container';
+import SessionFormContainer from
+  './session_form/session_form_container';
+import PortfolioBuilderContainer from
+  './portfolio_builder/portfolio_builder_container';
+import NavBar from
+  './navbar/navbar';
+import {
+  AuthRoute,
+  ProtectedRoute,
+  ProtectedExactRoute
+} from '../util/route_util';
 
 const App = () => (
   <div>
@@ -19,12 +29,14 @@ const App = () => (
         <Link to="/" className="header-link">
           <h1>RecruiterRouter</h1>
         </Link>
+        <NavBar />
         <GreetingContainer />
       </div>
     </header>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/register" component={SessionFormContainer} />
+      <ProtectedRoute path="/builder" component={PortfolioBuilderContainer} />
     </Switch>
     <footer>
       <div className="max-width footer">
