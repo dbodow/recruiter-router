@@ -57,9 +57,9 @@ html.no-js
                     li.active
                       a(href='#') Home
                     li
-                      a(href='#services') Projects
+                      a(href='#services') Experience
                     li
-                      a(href='#portfolio') Portfolio
+                      a(href='#portfolio') Projects
                     li
                       a(href='#our-team') Skills
                     li
@@ -89,65 +89,26 @@ html.no-js
       .container
         .row
           .heading-section.col-md-12.text-center
-            h2 Projects
+            h2 Experience
           // /.heading-section
         // /.row
+        
         script(type='text/javascript').
-        - for (var i = 0; i < 3; ++i) {
-          p !{JSON.stringify(tag.projectsSection[i].projectTitle)};
-          p !{JSON.stringify(tag.projectsSection[i].projectDescription)};
-        - }
-
-        .row
-          .col-md-3.col-sm-6
-            #service-1.service-item
-              .service-icon
-                i.fa.fa-file-code-o
-              // /.service-icon
-              .service-content
-                .inner-service
-                  h3 #{tag.projectsSection[0].projectTitle}
-                  p #{tag.projectsSection[0].projectDescription}
-              // /.service-content
-            // /#service-1
-          // /.col-md-3
-          .col-md-3.col-sm-6
-            #service-2.service-item
-              .service-icon
-                i.fa.fa-paper-plane-o
-              // /.service-icon
-              .service-content
-                .inner-service
-                  h3 Our Support
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
-              // /.service-content
-            // /#service-1
-          // /.col-md-3
-          .col-md-3.col-sm-6
-            #service-3.service-item
-              .service-icon
-                i.fa.fa-institution
-              // /.service-icon
-              .service-content
-                .inner-service
-                  h3 Our Design
-                  p
-                    | We make HTML CSS templates that are responsive for any screen size on any device. Feel free to download and use our templates without restrictions.
-              // /.service-content
-            // /#service-1
-          // /.col-md-3
-          .col-md-3.col-sm-6
-            #service-4.service-item
-              .service-icon
-                i.fa.fa-flask
-              // /.service-icon
-              .service-content
-                .inner-service
-                  h3 Go for mobile
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.
-              // /.service-content
+        #experiences-content-section
+          - for (var i = 0; i < tag.projectsSection.length; ++i) {
+              .col-md-3.col-sm-6
+                #service-3.service-item
+                  .service-icon
+                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/\"([^(\")"]+)\":/g,"$1:")}
+                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/\"([^(\")"]+)\":/g,"$1:")}
+                    p.dates !{JSON.stringify(tag.experienceSection.experiences[i].startDate) + " - " + JSON.stringify(tag.experienceSection.experiences[i].endDate)}
+                    //- i.fa.fa-file-code-o
+                  // /.service-icon
+                  .service-content
+                    .inner-service
+                      h3 !{JSON.stringify(tag.experienceSection.experiences[i].hoverTitle)}
+                      p !{JSON.stringify(tag.experienceSection.experiences[i].hoverDescription)}
+          - }
             // /#service-1
           // /.col-md-3
         // /.row
@@ -157,7 +118,7 @@ html.no-js
       .container
         .row
           .heading-section.col-md-12.text-center
-            h2 Experience
+            h2 Projects
           // /.heading-section
         // /.row
         .row
