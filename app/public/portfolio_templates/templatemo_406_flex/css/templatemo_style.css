@@ -526,7 +526,6 @@ hr {
   position: relative;
   color: white;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .service-item a {
@@ -804,6 +803,7 @@ hr {
 .dates {
   font-size: 16px;
 }
+
 /*
 body, p, div, h1, h2, h3, h4, h5, h6 {
 	font-family: "Open Sans", Arial, Verdana, Geneva, sans-serif;

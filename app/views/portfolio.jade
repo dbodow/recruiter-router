@@ -76,7 +76,7 @@ html.no-js
             ul.slides
               li
                 .overlay
-                img(src='https://lh3.googleusercontent.com/_uByFovnEZ2oUsodp1hcPu0ef0Y6LKJDhCpBbR6x6qLsXYvT30Wvh3r3EDWttWByW4TOvs4F64YtCX8LH5X9tUPwIa2mw-BIRT_QMb73z60j67NgtNqx7FJfQFhxeNqrcEmZDQNR0yLS8U5rsLG_S0TILd2xp5b8qnfdiW10p5aAqJ37jNdJY_KlvCh8Xd_CYqz7ewtSzCeEkyDGIjAEGZN9gCahZxrqxfVj_izpH_XeJ25evchTbjlRJzd36WfEsELiRqKpiiIojOMO5dnTMkNE3y8ZRdf-EiDasngLfYP4fqfvgUlYzKFc-C6b73QtT0Fwg91VwoXImYRpj-xhUR0KFlb7JqBcPN5vOheZYS2kft08nkwUtAo5ECxuFp6BAonUb_TSPm1hf0-Oj2oBitvfbh3XZnh3xfZffU4W01PHJZNaxZa-W3Gi9MRqRQ7Olk9KNiPIuvm-uR2ufbasP-VrzLU6jQ5C6oHfvU2eP1aWtgQypO5OzSvvNpVsr8fiJN2wQ3DaMLgzfUR0n83EGx8AYZJ1YSAwdAN_qLNIlX-BuuU3-Vsxx_6yKnHEuKCHUiO13pF1pDRen9lCgalrDwqWkA8nQNzX0cvW7xzIlnw=w1484-h990-no', alt='')
+                img(src='https://lh3.googleusercontent.com/xhTZ8khEj3uJ2JEg6INrf0U0tXE0l6xn2P_aGzODMhDFfaHRz_A19BtX2Q6NDLeiG-WntzOqzG45HhznxQAb9YG9qk01XCY75ulrOKECdYZS9RKUnlbDAjueTiq3utzGvaRAU34_f_-vLPuJZjQC_GOL3hdVV12Bi1IS3RSx5PJR-e8MdBgplnnGAyu6zSH2af4SqJDL9P3xfznBzJcAr0zslOYo2FBu9jP_yQR7vhBhqmCqXry6NlkLMw_6yZcH5fYP9lkBlODNfqGIwAEZN4zfDYM7r5nFs22mseRctM_cGWpWPGqfZO4iJW32_ZstXsdJj-OP0ku8AVhqM6yJ68sYuzQg4whwpi2BMFQQ2__TZkYuCwYZ401C-v9Ug-AMsinMgQFTQ4J9-8oQi1-NFQilgRHeEFwd8a797g6YwpQlCfpHoopim6nb6VscteTW7FFnSjvGLSK8b6GlUs8qoU5OK6_bWJ0X9HievvPoMgOKmMPXYQ-lRqdzSUcHHtbWWMTl5C0VxjMylIGcd-S2LCXyre6xogy04s-dW6b-iqlXv_IJN2y-f4S1h9TgR2bf-KdWZUKVOK8koUk1L192cpqx7h1XQP_NYviag_h2Iqo=w1410-h942-no', alt='')
                 .slider-caption.visible-md.visible-lg
                   h2 #{tag.heroSection.title}
                   p #{tag.heroSection.subtitle}
@@ -99,15 +99,15 @@ html.no-js
               .col-md-3.col-sm-6
                 #service-3.service-item
                   .service-icon
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace("", "")}
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace("", "")}
+                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/"/g, "")}
+                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/"/g, "")}
                     p.dates !{JSON.stringify(tag.experienceSection.experiences[i].startDate) + " - " + JSON.stringify(tag.experienceSection.experiences[i].endDate)}
                     //- i.fa.fa-file-code-o
                   // /.service-icon
                   .service-content
                     .inner-service
-                      h3 !{JSON.stringify(tag.experienceSection.experiences[i].hoverTitle)}
-                      p !{JSON.stringify(tag.experienceSection.experiences[i].hoverDescription)}
+                      h3 !{JSON.stringify(tag.experienceSection.experiences[i].hoverTitle).replace(/"/g, "")}
+                      p !{JSON.stringify(tag.experienceSection.experiences[i].hoverDescription).replace(/"/g, "")}
           - }
             // /#service-1
           // /.col-md-3
