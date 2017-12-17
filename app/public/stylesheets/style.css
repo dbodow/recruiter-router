@@ -409,6 +409,15 @@ footer {
 /* --- Portfolio Manager --- */
 /* Main */
 
+.pm-container p,
+.pm-container body,
+.pm-container h2,
+.pm-container h3,
+.pm-container ul,
+.pm-container li {
+  color: rgba(0, 0, 0, 0.85);
+}
+
 .pm-container h2 {
   font-weight: 300;
   font-size: 24px;
@@ -419,7 +428,7 @@ footer {
 .pm-flex-1,
 .pm-flex-2,
 .pm-flex-3,
-.pm-main-container,
+.pm-chart-container,
 .pm-aside-container {
   display: flex;
   border: 1px dashed red;
@@ -454,5 +463,59 @@ footer {
 }
 
 .pm-aside-container {
+  flex-direction: column;
+}
+
+.tags-li,
+.companies-li {
+  padding: 10px;
+}
+
+.tags-li:hover,
+.companies-li:hover {
+  color: rgba(30, 225, 140, 1);
+  cursor: pointer;
+}
+
+.pm-chart-container {
+  flex-direction: column;
+  box-sizing: content-box;
+  justify-content: flex-start;
+  align-items: left;
+}
+
+.chart {
+  border: 1px dashed #000;
+  display: flex;
+  padding: 10px;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.chart-summary-box {
+  margin-top: 20px;
+  border: 1px dashed #000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cs-card-title {
+  display: flex;
+  flex: 1;
+  padding: 10px 5px;
+}
+
+.cs-card-total {
+  display: flex;
+  flex: 1;
+  padding: 10px 5px;
+}
+
+.cs-card-list {
+  display: flex;
+  flex: 4;
+  padding: 10px 5px;
   flex-direction: column;
 }
