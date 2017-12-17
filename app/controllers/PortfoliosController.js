@@ -13,6 +13,7 @@ portfoliosController.loadPorfolio = (req, res) => {
       const port = result;
       const analytics = port.analytics;
       const taggedInfo = port.taggedInfo;
+      const staticInfo = port.staticInfo;
 
       let company;
       let tag;
@@ -40,8 +41,9 @@ portfoliosController.loadPorfolio = (req, res) => {
      if (!company) {
        res.render('index', { user : req.user });
      } else {
-
-       res.render('portfolio', { port: port, company: company, tag: tag});
+       console.log("---STATIC INFO---");
+       console.log(staticInfo);
+       res.render('portfolio', { port: port, company: company, tag: tag, staticInfo: staticInfo});
      }
   });
 };

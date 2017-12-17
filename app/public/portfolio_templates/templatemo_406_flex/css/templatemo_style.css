@@ -540,8 +540,12 @@ hr {
   min-width: 23%;
   max-height: 316px;
   min-height: 316px;
-  font-size: 1.4em;
-  padding: 30px 30px;
+  font-size: 16px;
+  padding: 30% 20px;
+}
+
+#experience-job-title {
+  font-weight: 700;
 }
 .service-item .service-content {
   padding: 10px;
@@ -560,7 +564,7 @@ hr {
   padding: 20px;
 }
 .service-item .service-content h3 {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   color: white;
   display: inline-block;

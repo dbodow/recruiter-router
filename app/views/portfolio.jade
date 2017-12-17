@@ -32,13 +32,13 @@ html.no-js
             .col-md-12.text-center
               ul.social-icons
                 li
-                  a.fa.fa-facebook(href='#')
+                  a.fa.fa-facebook(href=staticInfo.github)
                 li
-                  a.fa.fa-twitter(href='#')
+                  a.fa.fa-linkedin(href=staticInfo.linkedIn)
                 li
-                  a.fa.fa-dribbble(href='#')
+                  a.fa.fa-twitter(href="mailto:" + staticInfo.email)
                 li
-                  a.fa.fa-linkedin(href='#')
+                  a.fa.fa-dribbble(href='tel:' + staticInfo.phone)
             // /.col-md-12
           // /.row
         // /.container
@@ -99,10 +99,11 @@ html.no-js
               .col-md-3.col-sm-6
                 #service-3.service-item
                   .service-icon
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/"/g, "")}
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/"/g, "")}
-                    p.dates !{JSON.stringify(tag.experienceSection.experiences[i].startDate) + " - " + JSON.stringify(tag.experienceSection.experiences[i].endDate)}
-                    //- i.fa.fa-file-code-o
+                    #experience-job-title
+                      p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/"/g, "")}
+                      p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/"/g, "")}
+                    p.dates !{new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].startDate))).toLocaleDateString() + " - " + new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].endDate))).toLocaleDateString()}
+                      //- i.fa.fa-file-code-o
                   // /.service-icon
                   .service-content
                     .inner-service
@@ -229,7 +230,7 @@ html.no-js
                 span Designer
                 ul.social
                   li
-                    a.fa.fa-facebook(href='#')
+                    a.fa.fa-facebook(href='#{}')
                   li
                     a.fa.fa-twitter(href='#')
                   li
@@ -331,20 +332,13 @@ html.no-js
           // /.heading-section
         // /.row
         .row
-          .col-md-12
-            .googlemap-wrapper
-              #map_canvas.map-canvas
-            // /.googlemap-wrapper
-          // /.col-md-12
-        // /.row
-        .row
           .col-md-7.col-sm-6
             ul.contact-info
-              li Phone: 033-033-0660
+              li Phone:  #{staticInfo.phone}
               li
                 | Email:
-                a(href='mailto:info@company.com') info@company.com
-              li Address: 880 De Best Studio, Fork Street, San Francisco
+                a(href="mailto:" + staticInfo.email)  #{staticInfo.email}
+              li Address:  #{staticInfo.address1}, #{staticInfo.address2}, #{staticInfo.city}, #{staticInfo.state}, #{staticInfo.zipCode}
             // spacing for mobile viewing
             br
             br
