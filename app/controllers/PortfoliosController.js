@@ -41,8 +41,6 @@ portfoliosController.loadPorfolio = (req, res) => {
      if (!company) {
        res.render('index', { user : req.user });
      } else {
-       console.log("---STATIC INFO---");
-       console.log(staticInfo);
        res.render('portfolio', { port: port, company: company, tag: tag, staticInfo: staticInfo});
      }
   });
