@@ -1,5 +1,6 @@
 import _ from "lodash";
 import React from "react";
+import { Wrapper, Button, Menu, MenuItem } from "react-aria-menubutton";
 
 class ProjectManagerAside extends React.Component {
   renderTagNames() {
@@ -9,7 +10,7 @@ class ProjectManagerAside extends React.Component {
     console.log(uniqTags);
     return uniqTags.map((tagName, idx) => (
       <li className="tags-li" key={`tag-li#${idx}`}>
-        {tagName}
+        <MenuItem>{tagName}</MenuItem>
       </li>
     ));
   }
@@ -17,9 +18,13 @@ class ProjectManagerAside extends React.Component {
   renderCompanies() {
     return this.props.analytics.map((tag, idx) => (
       <li className="companies-li" key={`companies-li#${idx}`}>
-        {tag.companyName}
+        <MenuItem>{tag.companyName}</MenuItem>
       </li>
     ));
+  }
+
+  handleSelection() {
+    console.log("Hello");
   }
 
   render() {
@@ -27,10 +32,20 @@ class ProjectManagerAside extends React.Component {
       <div className="pm-aside-container pm-flex-2a">
         <h2>Portfolio Manager Aside</h2>
         <div>
-          <ul className="tags-ul">{this.renderTagNames()}</ul>
+          <Wrapper onSelection={this.handleSelection}>
+            <Button>tags</Button>
+            <Menu>
+              <ul className="tags-ul">{this.renderTagNames()}</ul>
+            </Menu>
+          </Wrapper>
         </div>
         <div>
-          <ul className="companies-ul">{this.renderCompanies()}</ul>
+          <Wrapper onSelection={this.handleSelection}>
+            <Button>companies</Button>
+            <Menu>
+              <ul className="companies-ul">{this.renderCompanies()}</ul>
+            </Menu>
+          </Wrapper>
         </div>
       </div>
     );
