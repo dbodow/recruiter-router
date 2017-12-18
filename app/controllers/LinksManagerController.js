@@ -24,7 +24,7 @@ LinksManagerController.createAnalyticsObj = (req, res) => {
   };
 
   const createAnalyticsObj = portfolio => {
-    const analytics = merge([], portfolio.analytics.toObject);
+    const analytics = merge([], portfolio.analytics.toObject());
     portfolio.set({ analytics: analytics.concat(_nullAnalyticsObj({
       companyName, username, tagName
     }))});

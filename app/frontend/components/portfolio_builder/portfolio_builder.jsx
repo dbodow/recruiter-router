@@ -19,6 +19,8 @@ export default class PortfolioBuilder extends React.Component {
     };
   }
   componentDidMount() {
+    console.log("---BUILDER PROPS---");
+    console.log(this.props);
     this.props.fetchPortfolio();
   }
 

@@ -19,6 +19,7 @@ const debugMode = store => {
   window.createTag = createTag;
   window.deleteTagApi = portfolioApiUtil.deleteTag;
   window.deleteTag = deleteTag;
+  
   window.createAnalyticsObjApi = portfolioApiUtil.createAnalyticsObj;
   window.createAnalyticsObj = createAnalyticsObj;
 };

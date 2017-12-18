@@ -14,8 +14,8 @@ import SessionFormContainer from
   './session_form/session_form_container';
 import PortfolioBuilderContainer from
   './portfolio_builder/portfolio_builder_container';
-import { LinksManager } from
-  './links_manager/links_manager';
+import LinksManagerContainer from
+  './links_manager/links_manager_container';
 import NavBar from
   './navbar/navbar';
 import {
@@ -39,7 +39,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/register" component={SessionFormContainer} />
       <ProtectedRoute path="/builder" component={PortfolioBuilderContainer} />
-      <ProtectedRoute path="/links" component={LinksManager} />
+      <ProtectedRoute path="/links" component={LinksManagerContainer} />
     </Switch>
     <footer>
       <div className="max-width footer">
