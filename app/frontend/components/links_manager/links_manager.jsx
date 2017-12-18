@@ -66,7 +66,7 @@ export default class LinksForm extends React.Component {
       tagName = "Default";
     }
     alert(
-      `Send this link to a recruiter at ${companyName}:\nhttps://www.recruiterrouter.com/${
+      `Send this link to a recruiter at ${companyName}:\nhttps://recruiterrouter.herokuapp.com/${
         this.props.currentUser.username
       }/${companyName.toLowerCase().replace(/\W/, "")}`
     );
