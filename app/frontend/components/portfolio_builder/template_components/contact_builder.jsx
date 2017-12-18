@@ -12,7 +12,8 @@ export default class ContactBuilder extends React.Component {
       city: "loading portfolio...",
       state: "loading portfolio...",
       zipCode: "loading portfolio...",
-      bio: "loading portfolio..."
+      bio: "loading portfolio...",
+      phone: "loading portfolio..."
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,7 +28,8 @@ export default class ContactBuilder extends React.Component {
       city: nextProps.staticInfo.city,
       state: nextProps.staticInfo.state,
       zipCode: nextProps.staticInfo.zipCode,
-      bio: nextProps.staticInfo.bio
+      bio: nextProps.staticInfo.bio,
+      phone: nextProps.staticInfo.phone
     });
   }
 
@@ -78,6 +80,15 @@ export default class ContactBuilder extends React.Component {
                 onChange={this.update("email")}
                 value={this.state.email}
                 type="email"/>
+            </div>
+            <div className="contact-url-input-container">
+              <i className="fa fa-phone fa-2x" aria-hidden="true"/>
+              <input
+                className="phone-input"
+                name="contact-phone-input"
+                onChange={this.update("phone")}
+                value={this.state.phone}
+                type="tel"/>
             </div>
           </div>
           <h2>Location</h2>

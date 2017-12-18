@@ -118,6 +118,7 @@ portfoliosManageController.deleteTag = (req, res) => {
 portfoliosManageController.updatePortfolio = (req, res) => {
   const username = req.user.username;
   const portfolioSection = JSON.parse(req.body.portfolioSection);
+  console.log(portfolioSection);
   const sectionName = req.body.sectionName;
   const tagName = req.body.tagName;
 
@@ -140,9 +141,15 @@ portfoliosManageController.updatePortfolio = (req, res) => {
 
       if (tagIdx === -1) return res.status(422).json(["Tag does not exist"]);
 
-      const replacementTaggedInfo = [merge({}, taggedInfo[tagIdx], {[sectionName]: portfolioSection})];
-      const newTaggedInfos = taggedInfo.slice(0, tagIdx).concat(taggedInfo.slice(tagIdx + 1)).concat(replacementTaggedInfo);
+      const oldTaggedInfo = merge({}, taggedInfo[tagIdx]);
+      delete oldTaggedInfo[sectionName];
+      const replacementTaggedInfo = [merge(oldTaggedInfo, {[sectionName]: portfolioSection})];
+      // need to ensure that Default is always the first tag in the array!
+      const newTaggedInfos = (tagName === 'Default') ?
+        replacementTaggedInfo.concat(taggedInfo.slice(tagIdx + 1)).concat(taggedInfo.slice(0, tagIdx)) :
+        taggedInfo.slice(0, tagIdx).concat(taggedInfo.slice(tagIdx + 1)).concat(replacementTaggedInfo);
       portfolio.set({ taggedInfo: newTaggedInfos });
+      // portfolio.markModified('taggedInfo');
     }
 
     portfolio.save( (err, updatedPortfolio) => {
