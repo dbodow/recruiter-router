@@ -4,9 +4,11 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-
+const port = process.env.PORT;
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
+
+app.listen(port);
 
 mongoose
   .connect(
