@@ -1120,3 +1120,36 @@ footer {
   padding: 10px 5px;
   flex-direction: column;
 }
+
+.company-name-input {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 236px;
+  line-height: 36px;
+  border: 1px solid #a0a0a2;
+  margin: 0 0 1rem 0;
+  border-radius: 0.25rem;
+  font-size: 20px;
+}
+
+.MyMenuButton {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 146px;
+  line-height: 36px;
+  border: 1px solid #a0a0a2;
+  margin: 0 0 1rem 0;
+  border-radius: 0.25rem;
+  font-size: 20px;
+}
+
+.link-manager-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+MyMenuButton:hover {
+  cursor: pointer;
+}

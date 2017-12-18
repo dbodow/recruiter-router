@@ -29,12 +29,8 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.4.0",
     "react": "^16.2.0",
-<<<<<<< HEAD
     "react-aria-menubutton": "^5.1.1",
-=======
-    "react-aria-menubutton": "^5.1.0",
     "react-chartjs-2": "^2.6.4",
->>>>>>> master
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

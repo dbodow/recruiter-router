@@ -34,22 +34,24 @@ export default class LinksForm extends React.Component {
         );
       });
       return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="Enter a company name (e.g. Google)" value={this.state.companyName} onChange={this.update("companyName")}></input>
-              <Wrapper
-                className='MyMenuButton'
-                onSelection={this.handleSelection("tagName")}
-              >
-                <Button className='MyMenuButton-button'>
-                  click me
-                </Button>
-                <Menu className='MyMenuButton-menu'>
-                  <ul>{menuItems}</ul>
-                </Menu>
-              </Wrapper>
-            <input type="submit" value="Submit" />
-          </form>
+        <div className="main" className="link-manger-container">
+          <div className="max-width">
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" placeholder="Enter a company name" value={this.state.companyName} onChange={this.update("companyName")} className="company-name-input"></input>
+                <Wrapper
+                  className='MyMenuButton'
+                  onSelection={this.handleSelection("tagName")}
+                >
+                  <Button className='MyMenuButton-button'>
+                    Select Tag
+                  </Button>
+                  <Menu className='MyMenuButton-menu'>
+                    <ul>{menuItems}</ul>
+                  </Menu>
+                </Wrapper>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
         </div>
       );
     } else {
