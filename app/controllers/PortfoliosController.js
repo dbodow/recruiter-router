@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose").set('debug', true);
 const portfoliosController = {};
 const portfolios = require("../models/portfolio");
+const merge = require('lodash/merge');
 
 portfoliosController.loadPorfolio = (req, res) => {
   const paramsUser = req.params.user;
@@ -24,11 +25,24 @@ portfoliosController.loadPorfolio = (req, res) => {
         const analyticsObjCompanyName =
           analyticsObj.companyName.toLowerCase().replace( /\W/g, '' );
 
-        if (analyticsObjCompanyName ===
-           paramsCompany) {
-            company = analyticsObj.companyName;
-            tag = analyticsObj.tagName;
-          }
+        if (analyticsObjCompanyName === paramsCompany) {
+          company = analyticsObj.companyName;
+          tag = analyticsObj.tagName;
+
+          // let updatedAnalytics = merge({}, analytics);
+          // updatedAnalytics[i].visits.push(Date.now());
+          // console.log("---UPDATEDANALYTICS---");
+          // console.log(updatedAnalytics);
+          // port.set({ analytics: updatedAnalytics });
+          // port.save( (err) => {
+          //   if (err) {
+          //     console.log("---ERR MSG---");
+          //     console.log(err);
+          //   } else {
+          //     console.log("---NO ERROR---");
+          //   }
+          // });
+        }
      }
 
      for (var j = 0; j < taggedInfo.length; j++) {
@@ -38,9 +52,12 @@ portfoliosController.loadPorfolio = (req, res) => {
          tag = taggedInfoObj;
        }
      }
+
      if (!company) {
        res.render('index', { user : req.user });
      } else {
+       console.log("---VISITS---");
+       console.log(port.analytics);
        res.render('portfolio', { port: port, company: company, tag: tag, staticInfo: staticInfo});
      }
   });
