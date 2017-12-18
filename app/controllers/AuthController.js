@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const passport = require("passport");
 const User = require("../models/User");
+const Portfolio = require("../models/portfolio");
 
 const userJSONView = require("../views/api/userJSONView");
 
@@ -14,12 +15,16 @@ authController.doRegister = (req, res) => {
     req.body.password,
     (err, user) => {
       if (err) {
-        if (user) console.log(user);
         res.status(422);
         return res.json(["Invalid credentials"]);
       }
-
       passport.authenticate("local")(req, res, () => {
+        Portfolio.create({ username: req.body.username }, portErr => {
+          if (portErr) {
+            res.status(500);
+            return res.json([['Failed to create new user portfolio']]);
+          }
+        });
         res.json(userJSONView(user));
       });
     }

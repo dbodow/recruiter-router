@@ -1,0 +1,243 @@
+doctype html
+html.no-js
+  head
+    meta(charset='utf-8')
+    title #{name}
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    prepend stylesheets
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800', rel='stylesheet', type='text/css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/font-awesome.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/animate.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/templatemo_misc.css')
+      link(rel='stylesheet', href='/portfolio_templates/templatemo_406_flex/css/templatemo_style.css')
+
+    append jscripts
+      script(type='text/javascript' src='/portfolio_templates/templatemo_406_flex/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js')
+
+  body
+    //if lt IE 7
+      p.chromeframe
+        | You are using an outdated browser.
+        a(href='http://browsehappy.com/') Upgrade your browser today
+        |  or
+        a(href='http://www.google.com/chromeframe/?redirect=true') install Google Chrome Frame
+        |  to better experience this site.
+    #sTop.site-main
+      .site-header
+        .container
+          .row
+            .col-md-12.text-center
+              ul.social-icons
+                li
+                  a.fa.fa-facebook(href=staticInfo.github)
+                li
+                  a.fa.fa-linkedin(href=staticInfo.linkedIn)
+                li
+                  a.fa.fa-twitter(href="mailto:" + staticInfo.email)
+                li
+                  a.fa.fa-dribbble(href='tel:' + staticInfo.phone)
+            // /.col-md-12
+          // /.row
+        // /.container
+        .main-header
+          .container
+            #menu-wrapper
+              .row
+                .logo-wrapper.col-md-2.col-sm-2
+                  h1
+                    a(href='#') Flex
+                // /.logo-wrapper
+                .col-md-10.col-sm-10.main-menu.text-right
+                  .toggle-menu.visible-sm.visible-xs
+                    i.fa.fa-bars
+                  ul.menu-first
+                    li.active
+                      a(href='#') Home
+                    li
+                      a(href='#services') Experience
+                    li
+                      a(href='#portfolio') Projects
+                    li
+                      a(href='#our-team') Skills
+                    li
+                      a(href='#contact') Contact
+                // /.main-menu
+              // /.row
+            // /#menu-wrapper
+          // /.container
+        // /.main-header
+      // /.site-header
+      .site-slider
+        .slider
+          .flexslider
+            ul.slides
+              li
+                .overlay
+                img(src='https://lh3.googleusercontent.com/xhTZ8khEj3uJ2JEg6INrf0U0tXE0l6xn2P_aGzODMhDFfaHRz_A19BtX2Q6NDLeiG-WntzOqzG45HhznxQAb9YG9qk01XCY75ulrOKECdYZS9RKUnlbDAjueTiq3utzGvaRAU34_f_-vLPuJZjQC_GOL3hdVV12Bi1IS3RSx5PJR-e8MdBgplnnGAyu6zSH2af4SqJDL9P3xfznBzJcAr0zslOYo2FBu9jP_yQR7vhBhqmCqXry6NlkLMw_6yZcH5fYP9lkBlODNfqGIwAEZN4zfDYM7r5nFs22mseRctM_cGWpWPGqfZO4iJW32_ZstXsdJj-OP0ku8AVhqM6yJ68sYuzQg4whwpi2BMFQQ2__TZkYuCwYZ401C-v9Ug-AMsinMgQFTQ4J9-8oQi1-NFQilgRHeEFwd8a797g6YwpQlCfpHoopim6nb6VscteTW7FFnSjvGLSK8b6GlUs8qoU5OK6_bWJ0X9HievvPoMgOKmMPXYQ-lRqdzSUcHHtbWWMTl5C0VxjMylIGcd-S2LCXyre6xogy04s-dW6b-iqlXv_IJN2y-f4S1h9TgR2bf-KdWZUKVOK8koUk1L192cpqx7h1XQP_NYviag_h2Iqo=w1410-h942-no', alt='')
+                .slider-caption.visible-md.visible-lg
+                  h2 #{tag.heroSection.title}
+                  p #{tag.heroSection.subtitle}
+                  a.slider-btn(href='#') Welcome #{company}
+          // /.flexslider
+        // /.slider
+      // /.site-slider
+    // /.site-main
+    #services.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Experience
+          // /.heading-section
+        // /.row
+        
+        script(type='text/javascript').
+        .center-content-section
+          - for (var i = 0; i < tag.experienceSection.experiences.length; ++i) {
+              .col-md-3.col-sm-6
+                #service-3.service-item
+                  a(href=tag.experienceSection.experiences[i].companyUrl)
+                    .service-icon
+                      #experience-job-title
+                        p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/"/g, "")}
+                        p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/"/g, "")}
+                      p.dates !{new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].startDate))).toLocaleDateString() + " - " + new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].endDate))).toLocaleDateString()}
+                        //- i.fa.fa-file-code-o
+                    // /.service-icon
+                    .service-content
+                      .inner-service
+                        h3 !{JSON.stringify(tag.experienceSection.experiences[i].hoverTitle).replace(/"/g, "")}
+                        p !{JSON.stringify(tag.experienceSection.experiences[i].hoverDescription).replace(/"/g, "")}
+          - }
+            // /#service-1
+          // /.col-md-3
+        // /.row
+      // /.container
+    // /#services
+    #portfolio.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Projects
+          // /.heading-section
+        // /.row
+        script(type='text/javascript').
+        .row
+        .center-content-section
+          - for (var i = 0; i < tag.projectsSection.length; ++i) {
+          .portfolio-item.col-md-3.col-sm-6
+            .portfolio-thumb
+              img(src=tag.projectsSection[i].imageUrl, alt='')
+              .portfolio-overlay
+                h3 #{tag.projectsSection[i].projectTitle}
+                p #{tag.projectsSection[i].projectDescription}
+                .project-links
+                  a(href=tag.projectsSection[i].projectURL) Host
+                  a  |
+                  a(href=tag.projectsSection[i].githubURL)  GitHub
+              // /.portfolio-overlay
+            // /.portfolio-thumb
+          // /.portfolio-item
+          -}
+        // /.row
+      // /.container
+    // /#portfolio
+    #our-team.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Skills
+          // /.heading-section
+        // /.row
+        .row
+          .col-md-8.col-sm-6
+            p #{tag.skillsSection.skillsParagraphText}
+              br
+              br
+          // /.col-md-8
+          
+          .col-md-4.col-sm-6
+                
+            ul.progess-bars
+            script(type='text/javascript').
+            - for (var i = 0; i < tag.skillsSection.skills.length; ++i) {
+              .progress
+                .progress-bar(role='progressbar', aria-valuenow=tag.skillsSection.skills[i].skillsPercentage, aria-valuemin='0', aria-valuemax='100', style='width: ' + tag.skillsSection.skills[i].skillPercentage + "%;") #{tag.skillsSection.skills[i].skillTitle} #{tag.skillsSection.skills[i].skillPercentage}%
+            -}
+          // /.col-md-4
+        // /.row
+      // /.container
+    // /#our-team
+    #contact.content-section
+      .container
+        .row
+          .heading-section.col-md-12.text-center
+            h2 Contact
+            p Send a message
+          // /.heading-section
+        // /.row
+        .row
+          .col-md-7.col-sm-6
+            ul.contact-info
+              li Phone:  #{staticInfo.phone}
+              li
+                | Email:
+                a(href="mailto:" + staticInfo.email)  #{staticInfo.email}
+              li Address:  #{staticInfo.address1}, #{staticInfo.address2}, #{staticInfo.city}, #{staticInfo.state}, #{staticInfo.zipCode}
+            // spacing for mobile viewing
+            br
+            br
+          // /.col-md-7
+          .col-md-5.col-sm-6
+            .contact-form
+              form#contactform(action="mailto:" + staticInfo.email, name='contactform', method="post" enctype="text/plain")
+                textarea#comments(name='comments', placeholder='Message')
+                input#submit.mainBtn(type='submit', value='Send Message')
+            // /.contact-form
+          // /.col-md-5
+        // /.row
+      // /.container
+    // /#contact
+    #footer
+      .container
+        .row
+          .col-md-8.col-xs-12.text-left
+          // /.text-center
+          .col-md-4.hidden-xs.text-right
+            a#go-top(href='#top') Back to top
+          // /.text-center
+        // /.row
+      // /.container
+    // /#footer
+    script(src='/portfolio_templates/templatemo_406_flex/js/vendor/jquery-1.11.0.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\\/script>')
+    script(src='/portfolio_templates/templatemo_406_flex/js/bootstrap.js')
+    script(src='/portfolio_templates/templatemo_406_flex/js/plugins.js')
+    script(src='/portfolio_templates/templatemo_406_flex/js/main.js')
+    // Google Map
+    script(src='http://maps.google.com/maps/api/js?sensor=true')
+    script(src='/portfolio_templates/templatemo_406_flex/js/vendor/jquery.gmap3.min.js')
+    // Google Map Init
+    script(type='text/javascript').
+      jQuery(function($){
+      $('#map_canvas').gmap3({
+      marker:{
+      address: '37.769725, -122.462154'
+      },
+      map:{
+      options:{
+      zoom: 15,
+      scrollwheel: false,
+      streetViewControl : true
+      }
+      }
+      });
+      /* Simulate hover on iPad
+      * http://stackoverflow.com/questions/2851663/how-do-i-simulate-a-hover-with-a-touch-in-touch-enabled-browsers
+      --------------------------------------------------------------------------------------------------------------*/
+      $('body').bind('touchstart', function() {});
+      });
+    // templatemo 406 flex

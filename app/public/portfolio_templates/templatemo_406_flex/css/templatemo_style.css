@@ -1,6 +1,6 @@
-/* 
+/*
 
-Flex Template 
+Flex Template
 
 http://www.templatemo.com/tm-406-flex
 
@@ -381,18 +381,19 @@ hr {
 .flexslider .slider-caption p {
   color: white;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 24px;
   margin-top: 20px;
   margin-bottom: 26px;
   display: block;
 }
 .flexslider .slider-caption a.slider-btn {
+  position:relative;
   color: white;
-  background-color: #ec523f;
+  font-size: 24px;
+  width: 300px;
   padding: 12px 20px;
   border-radius: 4px;
   text-transform: uppercase;
-  font-weight: 700;
 }
 @media screen and (min-width: 989px) {
   .flexslider .slider-caption {
@@ -414,8 +415,8 @@ hr {
   }
 }
 @media screen and (max-width: 991px) {
-  .logo-wrapper { 
-    background-size: contain;     
+  .logo-wrapper {
+    background-size: contain;
   }
   .logo-wrapper{
     height: 50px;
@@ -433,7 +434,7 @@ hr {
   }
   .menu-first.show {
     /*opacity: 1;*/
-    /*height: auto;  */  
+    /*height: auto;  */
     margin-top: 10px;
     display: block;
     /*transition: opacity 1s, height 0;*/
@@ -441,17 +442,17 @@ hr {
   .menu-first {
     float: right;
     overflow: auto;
-    width: 100%;  
-    display: none;  
-    /*opacity: 1;  */  
-    /*height: 0;  */  
+    width: 100%;
+    display: none;
+    /*opacity: 1;  */
+    /*height: 0;  */
     /*background: rgba(50, 50, 50, 0.88);*/
     /*transition: opacity 1s, height 0 1s; */
     /*transition: all 0.3s ease;    */
   }
   .main-menu ul li a {
     line-height: 40px;
-    padding-top: 10px;   
+    padding-top: 10px;
   }
   .main-menu ul li.active a {
     border-top: none;
@@ -525,20 +526,26 @@ hr {
   position: relative;
   color: white;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .service-item a {
-	color: #ffff66;
+	color: white;
 }
 
-.service-item a:hover {
+/*.service-item a:hover {
 	color: black;
-}
+}*/
 
 .service-item .service-icon {
-  font-size: 3em;
-  padding: 110px 0;
+  min-width: 23%;
+  max-height: 316px;
+  min-height: 316px;
+  font-size: 16px;
+  padding: 30% 20px;
+}
+
+#experience-job-title {
+  font-weight: 700;
 }
 .service-item .service-content {
   padding: 10px;
@@ -549,15 +556,15 @@ hr {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 200ms ease-in-out;
-  -moz-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 .service-item .service-content .inner-service {
   padding: 20px;
 }
 .service-item .service-content h3 {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   color: white;
   display: inline-block;
@@ -598,7 +605,9 @@ hr {
   overflow: hidden;
 }
 .portfolio-item .portfolio-thumb img {
+  height: 255px;
   width: 100%;
+  object-fit: cover;
 }
 .portfolio-item .portfolio-thumb .portfolio-overlay {
   background-color: #ec523f;
@@ -785,6 +794,29 @@ hr {
 
 #footer {
   margin-top: 130px;
+}
+
+.flexslider .slider-caption a.slider-btn:hover {
+  cursor: inherit;
+}
+
+.center-content-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dates {
+  font-size: 16px;
+}
+
+.project-links {
+  position: absolute;
+  bottom: 25px;
+}
+
+.project-links a {
+  color: white;
 }
 
 /*

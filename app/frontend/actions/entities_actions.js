@@ -8,6 +8,25 @@ export const fetchPortfolio = () => dispatch =>
     .then(portfolio => dispatch(receivePortfolio(portfolio)))
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 
+export const createTag = tagName => dispatch =>
+  portfolioApiUtil
+    .createTag(tagName)
+    .then(portfolio => dispatch(receivePortfolio(portfolio)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
+
+export const deleteTag = tagName => dispatch =>
+  portfolioApiUtil
+    .deleteTag(tagName)
+    .then(portfolio => dispatch(receivePortfolio(portfolio)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
+
+export const updatePortfolio = (portfolioSection, sectionName, tagName) =>
+  dispatch =>
+    portfolioApiUtil
+      .updatePortfolio(portfolioSection, sectionName, tagName)
+      .then(portfolio => dispatch(receivePortfolio(portfolio)))
+      .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
+
 export const receivePortfolio = portfolio => ({
   type: RECEIVE_PORTFOLIO,
   portfolio

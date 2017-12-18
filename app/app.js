@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
+
 mongoose
   .connect("mongodb://localhost/recruiter-router", { useMongoClient: true })
   .then(() => console.log("connection successful"))
@@ -18,6 +19,8 @@ const LocalStrategy = require("passport-local").Strategy;
 const index = require("./routes/index");
 const auth = require("./routes/api/authentication");
 const portfoliosManage = require("./routes/api/portfolios-manage");
+
+const portfolio = require('./routes/portfolios');
 
 const app = express();
 
@@ -34,6 +37,7 @@ app.use(
     saveUninitialized: false
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -52,8 +56,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", index);
 // app.use('/portfolios', portfolios);
 // JSON rendering
-app.use("/api/authentication", auth);
+
+// PUT ALL API NAMESPACE ABOVE ROUTE MATCHING!!!!!!!!
+app.use('/api/authentication', auth);
 app.use("/api/portfolio-manager", portfoliosManage);
+app.get('/:user/:company', portfolio);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

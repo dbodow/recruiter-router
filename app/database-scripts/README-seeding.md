@@ -4,7 +4,7 @@
 
 ```javascript
 use recruiter-router
-db.dropDatabase
+db.dropDatabase()
 use recruiter-router
 ```
 
