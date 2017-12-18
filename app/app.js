@@ -19,6 +19,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const index = require("./routes/index");
 const auth = require("./routes/api/authentication");
 const portfoliosManage = require("./routes/api/portfolios-manage");
+const linksManager = require("./routes/api/links-manager");
 
 const portfolio = require('./routes/portfolios');
 
@@ -60,6 +61,7 @@ app.use("/", index);
 // PUT ALL API NAMESPACE ABOVE ROUTE MATCHING!!!!!!!!
 app.use('/api/authentication', auth);
 app.use("/api/portfolio-manager", portfoliosManage);
+app.use("/api/links-manager", linksManager);
 app.get('/:user/:company', portfolio);
 
 // catch 404 and forward to error handler

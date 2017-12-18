@@ -1,3 +1,11 @@
+export const createAnalyticsObj = (companyName, tagName) => (
+  $.ajax({
+    method: "POST",
+    url: "/api/links-manager/links",
+    data: { companyName, tagName }
+  })
+);
+
 export const fetchPortfolio = () => (
   $.ajax({
     method: "GET",
