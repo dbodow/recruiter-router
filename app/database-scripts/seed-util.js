@@ -37,7 +37,7 @@ const visitsRandomizer = () => {
   let arr = [];
 
   for (let i = 0; i < numVisits; i++) {
-    arr.push(Date.parse(faker.date.recent()));
+    arr.push(Date.parse(faker.date.recent()) - 604800000);
   }
 
   return arr;

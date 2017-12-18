@@ -2,11 +2,7 @@ import merge from "lodash/merge";
 
 import { RECEIVE_PORTFOLIO } from "../actions/entities_actions";
 
-const _nullEntities = Object.freeze({
-  entities: {
-    portfolio: null
-  }
-});
+const _nullEntities = Object.freeze({ portfolio: null });
 
 const entitiesReducer = (state = _nullEntities, action) => {
   Object.freeze(state);

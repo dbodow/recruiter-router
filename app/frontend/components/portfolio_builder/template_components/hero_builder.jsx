@@ -53,11 +53,12 @@ export default class HeroBuilder extends React.Component {
             value={this.state.subtitle}
             alt="The hero section subtitle is a great place to establish a focus of your skillset."
             type="text"/>
-          <input
-            className="section-save-button"
-            value="Save Section"
-            type="submit"/>
         </form>
+        <button
+          className="section-save-button"
+          onClick={this.handleSubmit}>
+          Save Section
+        </button>
       </article>
     );
   }

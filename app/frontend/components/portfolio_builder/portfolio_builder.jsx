@@ -90,7 +90,6 @@ export default class PortfolioBuilder extends React.Component {
       <div className="editing-tools">
         <h1>Portfolio Management</h1>
         <h2>Edit different portfolio focuses to tailor content to different job postings.</h2>
-        <button className="save-progress-btn">Save Progress</button>
         <form className="editing-tools-tag-form" onSubmit={this.createTag.bind(this)}>
           <p>Choose a portfolio focus to edit</p>
           <select value={this.state.value} onChange={this.props.portfolio ? this.selectNewTag.bind(this) : null }>
