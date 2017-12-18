@@ -237,6 +237,7 @@ footer {
 	position: fixed;
 	border-radius: 20px;
 	z-index: 1;
+	background: none;
 }
 
 .editing-tools {
@@ -369,7 +370,7 @@ footer {
 }
 
 .editing-tools-flex-buffer {
-	background-color: rgba(24, 170, 209);
+	background-color: rgb(24, 170, 209);
 	min-width: 350px;
 	content: ' ';
 }
@@ -533,6 +534,10 @@ footer {
 		justify-content: space-around;
 	}
 
+	.new-array-form {
+		background-color: rgba(30, 225, 140, 0.3);
+	}
+
 	.date-range-container {
 		display: flex;
 		justify-content: space-around;
@@ -590,6 +595,12 @@ footer {
 		 font-size: 30px;
 		 padding-bottom: 20px;
 		 text-align: center;
+	 }
+
+	 .project {
+		 display: flex;
+		 justify-content: space-around;
+		 flex-wrap: wrap;
 	 }
 
 	 .array-form h2 {
