@@ -147,6 +147,19 @@ class PortfolioManagerMain extends React.Component {
     this.setState({ selectedCompany: companyName });
   }
 
+  showTags() {
+    return (
+      <div>
+        <Wrapper onSelection={this.handleTagSelection}>
+          <Button>tags</Button>
+          <Menu>
+            <ul className="tags-ul">{this.renderTagNames()}</ul>
+          </Menu>
+        </Wrapper>
+      </div>
+    );
+  }
+
   render() {
     console.log(this.state.companyVisits);
     return (
@@ -154,16 +167,8 @@ class PortfolioManagerMain extends React.Component {
         <div className="pm-aside-container pm-flex-2a">
           <h2>Portfolio Manager Aside</h2>
           <div>
-            <Wrapper onSelection={this.handleTagSelection}>
-              <Button>tags</Button>
-              <Menu>
-                <ul className="tags-ul">{this.renderTagNames()}</ul>
-              </Menu>
-            </Wrapper>
-          </div>
-          <div>
             <Wrapper onSelection={this.handleCompanySelection}>
-              <Button>companies</Button>
+              <Button className="pm-aside-btn">companies</Button>
               <Menu>
                 <ul className="companies-ul">{this.renderCompanies()}</ul>
               </Menu>
