@@ -18,6 +18,7 @@ portfoliosController.loadPorfolio = (req, res) => {
     .exec()
     .then((result) => {
       const port = result;
+      console.log('bad controller');
       const analytics = port.analytics;
       const taggedInfo = port.taggedInfo;
       const staticInfo = port.staticInfo;
