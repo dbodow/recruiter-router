@@ -49,8 +49,8 @@ class PortfolioManagerMain extends React.Component {
 
     visits.forEach(timestamp => {
       // TODO remove subtract weeks when seed data fixed
-      // let date = moment(timestamp).subtract(1, "weeks");
-      let date = moment(timestamp);
+      let date = moment(timestamp).subtract(1, "days");
+      // let date = moment(timestamp);
 
       switch (true) {
         case moment
