@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect("mongodb://localhost/recruiter-router", { useMongoClient: true })
+  .connect(MONGODB_URI, { useMongoClient: true })
   .then(() => console.log("connection successful"))
   .catch(err => console.err(err));
 
@@ -21,7 +21,7 @@ const auth = require("./routes/api/authentication");
 const portfoliosManage = require("./routes/api/portfolios-manage");
 const linksManager = require("./routes/api/links-manager");
 
-const portfolio = require('./routes/portfolios');
+const portfolio = require("./routes/portfolios");
 
 const app = express();
 
@@ -59,10 +59,10 @@ app.use("/", index);
 // JSON rendering
 
 // PUT ALL API NAMESPACE ABOVE ROUTE MATCHING!!!!!!!!
-app.use('/api/authentication', auth);
+app.use("/api/authentication", auth);
 app.use("/api/portfolio-manager", portfoliosManage);
 app.use("/api/links-manager", linksManager);
-app.get('/:user/:company', portfolio);
+app.get("/:user/:company", portfolio);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
