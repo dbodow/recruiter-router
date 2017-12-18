@@ -2,7 +2,7 @@ doctype html
 html.no-js
   head
     meta(charset='utf-8')
-    title Flex - Responsive HTML Template;
+    title #{name}
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
@@ -32,13 +32,13 @@ html.no-js
             .col-md-12.text-center
               ul.social-icons
                 li
-                  a.fa.fa-facebook(href='#')
+                  a.fa.fa-facebook(href=staticInfo.github)
                 li
-                  a.fa.fa-twitter(href='#')
+                  a.fa.fa-linkedin(href=staticInfo.linkedIn)
                 li
-                  a.fa.fa-dribbble(href='#')
+                  a.fa.fa-twitter(href="mailto:" + staticInfo.email)
                 li
-                  a.fa.fa-linkedin(href='#')
+                  a.fa.fa-dribbble(href='tel:' + staticInfo.phone)
             // /.col-md-12
           // /.row
         // /.container
@@ -76,7 +76,7 @@ html.no-js
             ul.slides
               li
                 .overlay
-                img(src='https://lh3.googleusercontent.com/_uByFovnEZ2oUsodp1hcPu0ef0Y6LKJDhCpBbR6x6qLsXYvT30Wvh3r3EDWttWByW4TOvs4F64YtCX8LH5X9tUPwIa2mw-BIRT_QMb73z60j67NgtNqx7FJfQFhxeNqrcEmZDQNR0yLS8U5rsLG_S0TILd2xp5b8qnfdiW10p5aAqJ37jNdJY_KlvCh8Xd_CYqz7ewtSzCeEkyDGIjAEGZN9gCahZxrqxfVj_izpH_XeJ25evchTbjlRJzd36WfEsELiRqKpiiIojOMO5dnTMkNE3y8ZRdf-EiDasngLfYP4fqfvgUlYzKFc-C6b73QtT0Fwg91VwoXImYRpj-xhUR0KFlb7JqBcPN5vOheZYS2kft08nkwUtAo5ECxuFp6BAonUb_TSPm1hf0-Oj2oBitvfbh3XZnh3xfZffU4W01PHJZNaxZa-W3Gi9MRqRQ7Olk9KNiPIuvm-uR2ufbasP-VrzLU6jQ5C6oHfvU2eP1aWtgQypO5OzSvvNpVsr8fiJN2wQ3DaMLgzfUR0n83EGx8AYZJ1YSAwdAN_qLNIlX-BuuU3-Vsxx_6yKnHEuKCHUiO13pF1pDRen9lCgalrDwqWkA8nQNzX0cvW7xzIlnw=w1484-h990-no', alt='')
+                img(src='https://lh3.googleusercontent.com/xhTZ8khEj3uJ2JEg6INrf0U0tXE0l6xn2P_aGzODMhDFfaHRz_A19BtX2Q6NDLeiG-WntzOqzG45HhznxQAb9YG9qk01XCY75ulrOKECdYZS9RKUnlbDAjueTiq3utzGvaRAU34_f_-vLPuJZjQC_GOL3hdVV12Bi1IS3RSx5PJR-e8MdBgplnnGAyu6zSH2af4SqJDL9P3xfznBzJcAr0zslOYo2FBu9jP_yQR7vhBhqmCqXry6NlkLMw_6yZcH5fYP9lkBlODNfqGIwAEZN4zfDYM7r5nFs22mseRctM_cGWpWPGqfZO4iJW32_ZstXsdJj-OP0ku8AVhqM6yJ68sYuzQg4whwpi2BMFQQ2__TZkYuCwYZ401C-v9Ug-AMsinMgQFTQ4J9-8oQi1-NFQilgRHeEFwd8a797g6YwpQlCfpHoopim6nb6VscteTW7FFnSjvGLSK8b6GlUs8qoU5OK6_bWJ0X9HievvPoMgOKmMPXYQ-lRqdzSUcHHtbWWMTl5C0VxjMylIGcd-S2LCXyre6xogy04s-dW6b-iqlXv_IJN2y-f4S1h9TgR2bf-KdWZUKVOK8koUk1L192cpqx7h1XQP_NYviag_h2Iqo=w1410-h942-no', alt='')
                 .slider-caption.visible-md.visible-lg
                   h2 #{tag.heroSection.title}
                   p #{tag.heroSection.subtitle}
@@ -94,20 +94,22 @@ html.no-js
         // /.row
         
         script(type='text/javascript').
-        #experiences-content-section
-          - for (var i = 0; i < tag.projectsSection.length; ++i) {
+        .center-content-section
+          - for (var i = 0; i < tag.experienceSection.experiences.length; ++i) {
               .col-md-3.col-sm-6
                 #service-3.service-item
-                  .service-icon
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace("", "")}
-                    p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace("", "")}
-                    p.dates !{JSON.stringify(tag.experienceSection.experiences[i].startDate) + " - " + JSON.stringify(tag.experienceSection.experiences[i].endDate)}
-                    //- i.fa.fa-file-code-o
-                  // /.service-icon
-                  .service-content
-                    .inner-service
-                      h3 !{JSON.stringify(tag.experienceSection.experiences[i].hoverTitle)}
-                      p !{JSON.stringify(tag.experienceSection.experiences[i].hoverDescription)}
+                  a(href=tag.experienceSection.experiences[i].companyUrl)
+                    .service-icon
+                      #experience-job-title
+                        p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/"/g, "")}
+                        p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/"/g, "")}
+                      p.dates !{new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].startDate))).toLocaleDateString() + " - " + new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].endDate))).toLocaleDateString()}
+                        //- i.fa.fa-file-code-o
+                    // /.service-icon
+                    .service-content
+                      .inner-service
+                        h3 !{JSON.stringify(tag.experienceSection.experiences[i].hoverTitle).replace(/"/g, "")}
+                        p !{JSON.stringify(tag.experienceSection.experiences[i].hoverDescription).replace(/"/g, "")}
           - }
             // /#service-1
           // /.col-md-3
@@ -121,95 +123,24 @@ html.no-js
             h2 Projects
           // /.heading-section
         // /.row
+        script(type='text/javascript').
         .row
+        .center-content-section
+          - for (var i = 0; i < tag.projectsSection.length; ++i) {
           .portfolio-item.col-md-3.col-sm-6
             .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p1.jpg', alt='')
+              img(src=tag.projectsSection[i].imageUrl, alt='')
               .portfolio-overlay
-                h3 New Walk
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p1.jpg', data-rel='lightbox')
-                  i.fa.fa-search
+                h3 #{tag.projectsSection[i].projectTitle}
+                p #{tag.projectsSection[i].projectDescription}
+                .project-links
+                  a(href=tag.projectsSection[i].projectURL) Host
+                  a  |
+                  a(href=tag.projectsSection[i].githubURL)  GitHub
               // /.portfolio-overlay
             // /.portfolio-thumb
           // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p2.jpg', alt='')
-              .portfolio-overlay
-                h3 Boat
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p2.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p7.jpg', alt='')
-              .portfolio-overlay
-                h3 Urban
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p7.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p8.jpg', alt='')
-              .portfolio-overlay
-                h3 Cycling
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p8.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p3.jpg', alt='')
-              .portfolio-overlay
-                h3 Digital Era
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p3.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p4.jpg', alt='')
-              .portfolio-overlay
-                h3 Horizon
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p4.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p5.jpg', alt='')
-              .portfolio-overlay
-                h3 Aquatic City
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p5.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
-          .portfolio-item.col-md-3.col-sm-6
-            .portfolio-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/gallery/p6.jpg', alt='')
-              .portfolio-overlay
-                h3 New Path
-                p Asperiores commodi illo fuga perferendis dolore repellendus sapiente ipsum.
-                a.expand(href='/portfolio_templates/templatemo_406_flex/images/gallery/p6.jpg', data-rel='lightbox')
-                  i.fa.fa-search
-              // /.portfolio-overlay
-            // /.portfolio-thumb
-          // /.portfolio-item
+          -}
         // /.row
       // /.container
     // /#portfolio
@@ -221,103 +152,20 @@ html.no-js
           // /.heading-section
         // /.row
         .row
-          .team-member.col-md-3.col-sm-6
-            .member-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/member1.jpg', alt='')
-              .team-overlay
-                h3 Tracy
-                span Designer
-                ul.social
-                  li
-                    a.fa.fa-facebook(href='#')
-                  li
-                    a.fa.fa-twitter(href='#')
-                  li
-                    a.fa.fa-linkedin(href='#')
-              // /.team-overlay
-            // /.member-thumb
-          // /.team-member
-          .team-member.col-md-3.col-sm-6
-            .member-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/member2.jpg', alt='')
-              .team-overlay
-                h3 Cindy
-                span Developer
-                ul.social
-                  li
-                    a.fa.fa-facebook(href='#')
-                  li
-                    a.fa.fa-twitter(href='#')
-                  li
-                    a.fa.fa-linkedin(href='#')
-              // /.team-overlay
-            // /.member-thumb
-          // /.team-member
-          .team-member.col-md-3.col-sm-6
-            .member-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/member3.jpg', alt='')
-              .team-overlay
-                h3 Mary
-                span Director
-                ul.social
-                  li
-                    a.fa.fa-facebook(href='#')
-                  li
-                    a.fa.fa-twitter(href='#')
-                  li
-                    a.fa.fa-linkedin(href='#')
-              // /.team-overlay
-            // /.member-thumb
-          // /.team-member
-          .team-member.col-md-3.col-sm-6
-            .member-thumb
-              img(src='/portfolio_templates/templatemo_406_flex/images/member4.jpg', alt='')
-              .team-overlay
-                h3 Linda
-                span Chief Executive
-                ul.social
-                  li
-                    a.fa.fa-facebook(href='#')
-                  li
-                    a.fa.fa-twitter(href='#')
-                  li
-                    a.fa.fa-linkedin(href='#')
-              // /.team-overlay
-            // /.member-thumb
-          // /.team-member
-        // /.row
-        .row
-          .col-md-12.text-center
-            .skills-heading
-              h3.skills-title Design Skills
-              p.small-text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          // /.col-md-12
-        // /.row
-        .row
           .col-md-8.col-sm-6
-            p
-              | Aliquam faucibus in dolor sed vestibulum. Sed adipiscing malesuada luctus. Morbi tincidunt, tellus scelerisque scelerisque scelerisque, sapien dui pretium augue, at consectetur sapien tellus vitae nunc. Ut vitae metus quis nulla cursus adipiscing pretium vel dolor. Fusce lacinia accumsan arcu, quis porttitor nisi tincidunt ut. Nunc malesuada nunc eget nunc sollicitudin posuere. Maecenas vitae tortor quis odio hendrerit sagittis.
-              br
-              br
-              | 						Etiam tincidunt, magna eu elementum tristique, sapien nisl venenatis lacus, nec sagittis lectus dui eget lorem. Donec in tempus mi. Aenean egestas interdum dolor, et mollis lectus consequat. Mauris ullamcorper, felis sit amet gravida malesuada, nisi sem rhoncus massa, non tempor est erat sit amet diam.
-              // spacing for mobile viewing
+            p #{tag.skillsSection.skillsParagraphText}
               br
               br
           // /.col-md-8
+          
           .col-md-4.col-sm-6
+                
             ul.progess-bars
-              li
-                .progress
-                  .progress-bar(role='progressbar', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100', style='width: 90%;') Photoshop 90%
-              li
-                .progress
-                  .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;') HTML CSS 80%
-              li
-                .progress
-                  .progress-bar(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100', style='width: 70%;') Development 70%
-              li
-                .progress
-                  .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;') Marketing 80%
+            script(type='text/javascript').
+            - for (var i = 0; i < tag.skillsSection.skills.length; ++i) {
+              .progress
+                .progress-bar(role='progressbar', aria-valuenow=tag.skillsSection.skills[i].skillsPercentage, aria-valuemin='0', aria-valuemax='100', style='width: ' + tag.skillsSection.skills[i].skillPercentage + "%;") #{tag.skillsSection.skills[i].skillTitle} #{tag.skillsSection.skills[i].skillPercentage}%
+            -}
           // /.col-md-4
         // /.row
       // /.container
@@ -331,35 +179,21 @@ html.no-js
           // /.heading-section
         // /.row
         .row
-          .col-md-12
-            .googlemap-wrapper
-              #map_canvas.map-canvas
-            // /.googlemap-wrapper
-          // /.col-md-12
-        // /.row
-        .row
           .col-md-7.col-sm-6
             ul.contact-info
-              li Phone: 033-033-0660
+              li Phone:  #{staticInfo.phone}
               li
                 | Email:
-                a(href='mailto:info@company.com') info@company.com
-              li Address: 880 De Best Studio, Fork Street, San Francisco
+                a(href="mailto:" + staticInfo.email)  #{staticInfo.email}
+              li Address:  #{staticInfo.address1}, #{staticInfo.address2}, #{staticInfo.city}, #{staticInfo.state}, #{staticInfo.zipCode}
             // spacing for mobile viewing
             br
             br
           // /.col-md-7
           .col-md-5.col-sm-6
             .contact-form
-              form#contactform(method='post', name='contactform')
-                p
-                  input#name(name='name', type='text', placeholder='Your Name')
-                p
-                  input#email(name='email', type='text', placeholder='Your Email')
-                p
-                  input#subject(name='subject', type='text', placeholder='Subject')
-                p
-                  textarea#comments(name='comments', placeholder='Message')
+              form#contactform(action="mailto:" + staticInfo.email, name='contactform', method="post" enctype="text/plain")
+                textarea#comments(name='comments', placeholder='Message')
                 input#submit.mainBtn(type='submit', value='Send Message')
             // /.contact-form
           // /.col-md-5
