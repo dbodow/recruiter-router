@@ -1,11 +1,17 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const portfoliosController = {};
 const portfolios = require("../models/portfolio");
+const users = require("../models/User");
 const merge = require('lodash/merge');
 
 portfoliosController.loadPorfolio = (req, res) => {
   const paramsUser = req.params.user;
   const paramsCompany = req.params.company.toLowerCase().replace( /\W/g, '' );
+  let name;
+
+  users.findOne({username: paramsUser}).exec().then((result) => {
+    name = result.name;
+  });
 
   portfolios
     .findOne({username: paramsUser})
@@ -27,25 +33,25 @@ portfoliosController.loadPorfolio = (req, res) => {
 
         if (analyticsObjCompanyName === paramsCompany) {
           company = analyticsObj.companyName;
-          console.log("---UPDATE TAG---");
+          // console.log("---UPDATE TAG---");
           tag = analyticsObj.tagName;
 
-          console.log("---ANALYTICS---");
-          console.log(analytics);
+          // console.log("---ANALYTICS---");
+          // console.log(analytics);
           let updatedAnalytics = merge([], port.analytics.toObject());
-          console.log("---MERGED ANALYTICS---");
-          console.log(updatedAnalytics);
+          // console.log("---MERGED ANALYTICS---");
+          // console.log(updatedAnalytics);
 
           updatedAnalytics[i].visits.push(Date.now());
-          console.log("---UPDATEDANALYTICS---");
-          console.log(updatedAnalytics);
+          // console.log("---UPDATEDANALYTICS---");
+          // console.log(updatedAnalytics);
           port.set({ analytics: updatedAnalytics });
           port.save( (err) => {
             if (err) {
-              console.log("---ERR MSG---");
-              console.log(err);
+              // console.log("---ERR MSG---");
+              // console.log(err);
             } else {
-              console.log("---NO ERROR---");
+              // console.log("---NO ERROR---");
             }
           }).then(() => {
 
@@ -62,7 +68,7 @@ portfoliosController.loadPorfolio = (req, res) => {
             } else {
               // console.log("---VISITS---");
               // console.log(port.analytics);
-              res.render('portfolio', { port: port, company: company, tag: tag, staticInfo: staticInfo});
+              res.render('portfolio', { name: name, port: port, company: company, tag: tag, staticInfo: staticInfo});
             }
 
           });
