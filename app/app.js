@@ -9,7 +9,10 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect(MONGODB_URI, { useMongoClient: true })
+  .connect(
+    "mongodb://heroku_0rt4l75q:j6jpfrr917r7ehkhndh1idt1le@ds161026.mlab.com:61026/heroku_0rt4l75q",
+    { useMongoClient: true }
+  )
   .then(() => console.log("connection successful"))
   .catch(err => console.err(err));
 
