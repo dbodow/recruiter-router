@@ -1,4 +1,4 @@
-const mongoose = require("mongoose").set('debug', true);
+const mongoose = require("mongoose")
 const portfoliosController = {};
 const portfolios = require("../models/portfolio");
 const merge = require('lodash/merge');
@@ -27,39 +27,49 @@ portfoliosController.loadPorfolio = (req, res) => {
 
         if (analyticsObjCompanyName === paramsCompany) {
           company = analyticsObj.companyName;
+          console.log("---UPDATE TAG---");
           tag = analyticsObj.tagName;
 
-          // let updatedAnalytics = merge({}, analytics);
-          // updatedAnalytics[i].visits.push(Date.now());
-          // console.log("---UPDATEDANALYTICS---");
-          // console.log(updatedAnalytics);
-          // port.set({ analytics: updatedAnalytics });
-          // port.save( (err) => {
-          //   if (err) {
-          //     console.log("---ERR MSG---");
-          //     console.log(err);
-          //   } else {
-          //     console.log("---NO ERROR---");
-          //   }
-          // });
+          console.log("---ANALYTICS---");
+          console.log(analytics);
+          let updatedAnalytics = merge([], port.analytics.toObject());
+          console.log("---MERGED ANALYTICS---");
+          console.log(updatedAnalytics);
+
+          updatedAnalytics[i].visits.push(Date.now());
+          console.log("---UPDATEDANALYTICS---");
+          console.log(updatedAnalytics);
+          port.set({ analytics: updatedAnalytics });
+          port.save( (err) => {
+            if (err) {
+              console.log("---ERR MSG---");
+              console.log(err);
+            } else {
+              console.log("---NO ERROR---");
+            }
+          }).then(() => {
+
+            for (var j = 0; j < taggedInfo.length; j++) {
+              const taggedInfoObj = taggedInfo[j];
+
+              if (tag === taggedInfoObj.tagName) {
+                tag = taggedInfoObj;
+              }
+            }
+
+            if (!company) {
+              res.render('index', { user : req.user });
+            } else {
+              // console.log("---VISITS---");
+              // console.log(port.analytics);
+              res.render('portfolio', { port: port, company: company, tag: tag, staticInfo: staticInfo});
+            }
+
+          });
         }
      }
 
-     for (var j = 0; j < taggedInfo.length; j++) {
-       const taggedInfoObj = taggedInfo[j];
 
-       if (tag === taggedInfoObj.tagName) {
-         tag = taggedInfoObj;
-       }
-     }
-
-     if (!company) {
-       res.render('index', { user : req.user });
-     } else {
-       console.log("---VISITS---");
-       console.log(port.analytics);
-       res.render('portfolio', { port: port, company: company, tag: tag, staticInfo: staticInfo});
-     }
   });
 };
 
