@@ -47,6 +47,7 @@ class PortfolioManagerMain extends React.Component {
     };
 
     visits.forEach(timestamp => {
+      // TODO remove subtract weeks when seed data fixed
       let date = moment(timestamp).subtract(1, "weeks");
 
       switch (true) {
@@ -116,8 +117,6 @@ class PortfolioManagerMain extends React.Component {
   renderTagNames() {
     let tags = this.props.analytics.map(tag => tag.tagName);
     let uniqTags = _.uniq(tags);
-    // console.log(tags);
-    // console.log(uniqTags);
     return uniqTags.map((tagName, idx) => (
       <li className="tags-li" key={`tag-li#${idx}`} data={tagName}>
         <MenuItem>{tagName}</MenuItem>
@@ -148,9 +147,6 @@ class PortfolioManagerMain extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
-    // console.log(this.state);
-    // console.log(this.handleSelection);
     return (
       <div className="pm-main-box pm-flex-2 max-width">
         <div className="pm-aside-container pm-flex-2a">

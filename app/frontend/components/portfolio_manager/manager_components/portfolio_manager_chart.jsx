@@ -10,10 +10,6 @@ import ChartSummaryCard from "./chart_summary_card";
 class ProjectManagerChart extends React.Component {
   constructor(props) {
     super(props);
-
-    // let now = moment();
-    // let format = moment => ()
-    //   moment().format("MMM D, YYYY") + " | week " + moment().format("w");
     this.state = {
       chartInfo: {
         labels: [
@@ -31,7 +27,6 @@ class ProjectManagerChart extends React.Component {
           {
             fill: true,
             label: "Page Views",
-            // data: [0, 1, 3, 5, 2, 10, 12, 5, 30],
             data: this.props.chartData,
             borderColor: "rgba(30, 225, 140, 1)",
             backgroundColor: "rgba(8, 62, 168, .35)",
@@ -56,12 +51,12 @@ class ProjectManagerChart extends React.Component {
         }
       ]
     });
-    console.log(this.state);
   }
 
   reloadChart() {
     return {
       labels: [
+        "9+ weeks ago",
         "8 weeks ago",
         "7 weeks ago",
         "6 weeks ago",
@@ -76,7 +71,6 @@ class ProjectManagerChart extends React.Component {
         {
           fill: true,
           label: "Page Views",
-          // data: [0, 1, 3, 5, 2, 10, 12, 5, 30],
           data: this.props.chartData,
           borderColor: "rgba(30, 225, 140, 1)",
           backgroundColor: "rgba(8, 62, 168, .35)",
@@ -87,14 +81,9 @@ class ProjectManagerChart extends React.Component {
   }
 
   render() {
-    // let visits = this.props.analytics[1].visits.map(timestamp =>
-    //   moment(timestamp).format("dddd, MMMM Do YYYY, h:mm:ss a")
-    // );
-    // console.log(visits);
-    // console.log(this.state.chartInfo.datasets[0].data);
-    if (this.state.chartInfo.datasets[0].data === []) {
-      // console.log(this.state.chartInfo.datasets[0].data);
-      return null;
+    console.log(this.props.chartData.length);
+    if (this.props.chartData.length < 1) {
+      return <div className="pm-chart-container pm-flex-2b">&nbsp;</div>;
     } else {
       return (
         <div className="pm-chart-container pm-flex-2b">
@@ -118,7 +107,9 @@ class ProjectManagerChart extends React.Component {
                   yAxes: [
                     {
                       ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        min: 0,
+                        suggestedMax: 50
                       },
                       display: true,
                       scaleLabel: {
@@ -139,8 +130,3 @@ class ProjectManagerChart extends React.Component {
 }
 
 export default ProjectManagerChart;
-
-// type: "time",
-// time: {
-//   unit: "week"
-// },

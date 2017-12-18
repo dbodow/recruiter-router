@@ -439,9 +439,9 @@ footer {
   flex: 1;
 }
 
-.pm-flex-2 {
+/* .pm-flex-2 {
   flex: 7;
-}
+} */
 
 .pm-flex-2a {
   flex: 1;
@@ -459,6 +459,10 @@ footer {
   box-sizing: border-box;
   height: 100%;
   padding: 50px 0;
+}
+
+.pm-main-box {
+  height: 900px;
 }
 
 .pm-aside-container {
