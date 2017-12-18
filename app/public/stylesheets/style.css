@@ -265,6 +265,7 @@ footer {
 	padding: 5px 0;
 	font-size: 20px;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 .editing-tools-tag-form {
@@ -281,6 +282,7 @@ footer {
 	text-align: center;
 	font-size: 16px;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 .editing-tools-tag-form > p {
@@ -300,22 +302,62 @@ footer {
 .editing-tools-tag-form > .text-input {
 	font-size: 16px;
 	font-weight: 400;
+	border-radius: 5px;
 	box-sizing: border-box;
+	border: none;
+}
+
+.submit-portfolio-tag-button {
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: 700;
+	box-sizing: border-box;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+	transition: 0.2s;
+	background-color: rgba(30, 225, 140, 0.7);
+}
+
+.submit-portfolio-tag-button:hover {
+	background-color: rgba(30, 225, 140, 1);
 }
 
 .delete-focus-btn {
 	margin: 10px 0;
-	padding: 5px 0;
+	padding: 8px 0;
 	font-size: 16px;
 	font-weight: 700;
+	background-color: rgba(193, 27, 27, 0.8);
+	color: white;
+	transition: 0.2s;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.delete-focus-btn:hover {
+	background-color: rgba(193, 27, 27, 1);
 }
 
 .editing-tools > h3 {
 	margin: 10px 0;
+	font-size: 20px;
+	font-weight: 300;
 }
 
 .sections-list {
 	margin: 10px 0;
+}
+
+.sections-list > li {
+	transition: 0.2s;
+	cursor: pointer;
+	line-height: 1.5;
+}
+
+.sections-list > li:hover {
+	background-color: rgba(255, 201, 69, 1);
 }
 
 .preview-btn {
@@ -323,6 +365,7 @@ footer {
 	padding: 5px 0;
 	font-size: 16px;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 .editing-tools-flex-buffer {
@@ -333,10 +376,26 @@ footer {
 
 .portfolio-builder-container {
 	width: 100%;
-	/*overflow-y: scroll;*/
 }
 
 /* Portfolio Builder Content */
+
+.section-save-button {
+	border: solid 3px rgba(255, 201, 69, 1);
+	padding: 8px;
+	font-size: 16px;
+	font-weight: 300;
+	background-color: rgba(255, 201, 69, 0);
+	transition: 0.2s;
+	color: black;
+	cursor: pointer;
+	display: inline-block;
+	align-self: flex-end;
+}
+
+.section-save-button:hover {
+	background-color: rgba(255, 201, 69, 1);
+}
 
 /* Hero */
  .hero-container {

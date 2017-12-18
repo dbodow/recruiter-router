@@ -18,7 +18,10 @@ const tagsFn = () => {
         focusDescription: faker.lorem.sentences(),
         experiences: experiencesFn()
       },
-      projectsSection: projectsFn(),
+      projectsSection: {
+        focusDescription: faker.lorem.sentences(),
+        projects: projectsFn(),
+      },
       skillsSection: {
         skillsParagraphText: faker.lorem.sentences(),
         skills: skillsFn()
@@ -83,7 +86,8 @@ const contactsFn = userName => {
     address2: address2Helper(),
     city: faker.address.city(),
     state: faker.address.state(),
-    zipCode: faker.address.zipCode()
+    zipCode: faker.address.zipCode(),
+    bio: faker.lorem.sentences()
   };
 };
 
