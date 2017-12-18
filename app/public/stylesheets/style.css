@@ -382,20 +382,65 @@ footer {
 /* Portfolio Builder Content */
 
 .section-save-button {
-	border: solid 3px rgba(255, 201, 69, 1);
+	margin: 0 auto 20px auto;
+	border: solid 2px rgba(255, 201, 69, 2);
+	border-radius: 5px;
 	padding: 8px;
 	font-size: 16px;
 	font-weight: 300;
-	background-color: rgba(255, 201, 69, 0);
+	background-color: rgba(255, 201, 69, 1);
 	transition: 0.2s;
 	color: black;
 	cursor: pointer;
-	display: inline-block;
+	display: block;
 	align-self: flex-end;
 }
 
 .section-save-button:hover {
-	background-color: rgba(255, 201, 69, 1);
+	border: solid 2px rgba(8, 62, 168, 2);
+}
+
+.bold-container {
+	border: solid 3px black;
+	border-radius: 20px;
+	margin: 30px 0;
+	background-color: #eee;
+}
+
+.spaced-btn {
+	margin: 30px 30px 30px 30px;
+}
+
+.delete-array-item-btn {
+	padding: 8px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 700;
+	background-color: rgba(193, 27, 27, 0.8);
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.delete-array-item-btn:hover {
+	background-color: rgba(193, 27, 27, 1);
+}
+
+.new-array-item-btn {
+	padding: 8px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 700;
+	background-color: rgba(24, 170, 209, 0.8);
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.new-array-item-btn:hover {
+	background-color: rgba(24, 170, 209, 1);
 }
 
 /* Hero */
@@ -407,6 +452,7 @@ footer {
 	 height: calc((100vw - 350px) * 0.468795);
 
 	 display: flex;
+	 flex-direction: column;
 	 justify-content: center;
 	 align-items: center;
  }
@@ -420,6 +466,8 @@ footer {
  	 flex-direction: column;
 	 padding: 30px;
 	 border-radius: 20px;
+	 margin-bottom: 30px;
+	 margin-top: 30px;
  }
 
  .hero-form p {
@@ -517,6 +565,7 @@ footer {
 	.experience-array {
 		display: flex;
 		justify-content: center;
+		margin-bottom: 30px;
 	}
 
 	.array-form {
@@ -633,6 +682,7 @@ footer {
 		 width: 67%;
 		 justify-content: space-between;
 		 margin-top: 30px;
+ 		 margin-bottom: 30px;
 	 }
 
 	 .skill-description-form {
@@ -837,6 +887,10 @@ footer {
 	 .location-input-container {
 		 width: 50%;
 		 padding-left: 10px;
+	 }
+
+	 .contact-links-form {
+		 margin-bottom: 30px;
 	 }
 
 	 .contact-links-form textarea {

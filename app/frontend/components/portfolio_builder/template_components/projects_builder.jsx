@@ -32,7 +32,6 @@ export default class ProjectsBuidler extends React.Component {
     const section = merge({}, this.state);
     delete section.selectedTag;
     delete section.newProject;
-    console.log(section);
     this.props.updatePortfolio(section, "projectsSection",
       this.state.selectedTag);
   }
@@ -63,7 +62,6 @@ export default class ProjectsBuidler extends React.Component {
     return e => {
       const projects = this.state.projects.slice(0,i)
       .concat(this.state.projects.slice(i+1));
-      console.log(projects);
       this.setState({ projects });
     };
   }
