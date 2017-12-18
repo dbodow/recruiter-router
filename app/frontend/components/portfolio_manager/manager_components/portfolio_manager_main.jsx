@@ -129,7 +129,7 @@ class PortfolioManagerMain extends React.Component {
     return this.props.analytics.map((tag, idx) => (
       <li
         className="companies-li"
-        key={`companies-li#${idx}`}
+        key={`companies-li-#${idx}`}
         data={tag.companyName}
       >
         <MenuItem>{tag.companyName}</MenuItem>
@@ -161,14 +161,22 @@ class PortfolioManagerMain extends React.Component {
   }
 
   render() {
-    console.log(this.state.companyVisits);
     return (
       <div className="pm-main-box pm-flex-2 max-width">
         <div className="pm-aside-container pm-flex-2a">
-          <h2>Portfolio Manager Aside</h2>
-          <div>
+          <div className="pm-aside-txt">
+            <h2>Select a company</h2>
+            <br />
+            <div className="pm-aside-txt">
+              <p>
+                Click the button below to see companies you've created
+                RecruiterRouter links for
+              </p>
+            </div>
+          </div>
+          <div className="pm-aside-menu">
             <Wrapper onSelection={this.handleCompanySelection}>
-              <Button className="pm-aside-btn">companies</Button>
+              <Button className="pm-aside-btn">show {`<companies />`}</Button>
               <Menu>
                 <ul className="companies-ul">{this.renderCompanies()}</ul>
               </Menu>

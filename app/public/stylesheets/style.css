@@ -1027,14 +1027,57 @@ footer {
   flex-direction: column;
 }
 
+.pm-aside-txt {
+  padding-bottom: 50px;
+}
+
+.pm-aside-btn {
+  padding: 5px 20px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+
+.pm-aside-btn:hover {
+  font-weight: 300;
+  color: #fdfdfd;
+  border: 1px solid rgba(8, 62, 168, 0.85);
+  background-color: rgba(8, 62, 168, 0.85);
+}
+
+.pm-aside-btn:focus {
+  outline: none;
+}
+
+.pm-aside-btn:hover {
+  cursor: pointer;
+}
+
+.companies-ul {
+  position: relative;
+  top: 40px;
+  border: 1px solid #fafafa;
+  border-radius: 2px;
+  margin-right: 40px;
+  background-color: #fafafa;
+}
+
+.companies-ul:first-child {
+  border-top: none;
+}
+
 .tags-li,
 .companies-li {
-  padding: 10px;
+  letter-spacing: 1px;
+  padding: 24px;
+  border-top: 1px solid #eee;
 }
 
 .tags-li:hover,
 .companies-li:hover {
   color: rgba(30, 225, 140, 1);
+  background-color: rgba(8, 62, 168, 0.85);
+  border: 1px solid rgba(8, 62, 168, 0.85);
+  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -1043,6 +1086,8 @@ footer {
   box-sizing: content-box;
   justify-content: space-around;
   align-items: left;
+  border: 1px solid #fdfdfd;
+  border-radius: 2px;
 }
 
 .chart {
@@ -1066,11 +1111,25 @@ footer {
   background-color: rgba(8, 62, 168, 1);
 }
 
-/* .chart-summary-box h3 {
+.pm-aside-txt p,
+.pm-intro-txt {
   font-weight: 300;
-  font-size: 48px;
-  color: rgba(30, 225, 140, 0.85);
-} */
+  color: #888;
+  font-size: 16px;
+}
+
+.pm-aside-txt p {
+  text-align: left;
+}
+
+.pm-intro-box {
+  position: relative;
+  left: 160px;
+}
+
+.pm-aside-txt {
+  margin-right: 20px;
+}
 
 .chart-summary-box ul,
 .chart-summary-box li,

@@ -89,7 +89,16 @@ class ProjectManagerChart extends React.Component {
 
   render() {
     if (this.props.chartData.length < 1) {
-      return <div className="pm-chart-container pm-flex-2b">&nbsp;</div>;
+      return (
+        <div className="pm-chart-container pm-flex-2b">
+          <div className="pm-intro-box">
+            <span className="pm-intro-txt">
+              Portfolio link analytics will populate here after selecting a
+              company
+            </span>
+          </div>
+        </div>
+      );
     } else {
       return (
         <div className="pm-chart-container pm-flex-2b">
