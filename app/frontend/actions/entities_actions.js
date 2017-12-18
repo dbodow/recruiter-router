@@ -4,7 +4,7 @@ export const RECEIVE_PORTFOLIO_ERRORS = "RECEIVE_PORTFOLIO_ERRORS";
 
 export const createAnalyticsObj = (companyName, tagName) => dispatch =>
   portfolioApiUtil
-    .createAnalyticsObj()
+    .createAnalyticsObj(companyName, tagName)
     .then(portfolio => dispatch(receivePortfolio(portfolio)))
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 

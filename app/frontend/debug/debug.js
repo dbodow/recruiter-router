@@ -1,7 +1,8 @@
 import * as portfolioApiUtil from "../util/portfolio-manager_api_util";
 import { fetchPortfolio,
          createTag,
-         deleteTag } from "../actions/entities_actions";
+         deleteTag,
+         createAnalyticsObj } from "../actions/entities_actions";
 import { login, register, logout } from "../actions/session_actions";
 
 const debugMode = store => {
@@ -18,6 +19,8 @@ const debugMode = store => {
   window.createTag = createTag;
   window.deleteTagApi = portfolioApiUtil.deleteTag;
   window.deleteTag = deleteTag;
+  window.createAnalyticsObjApi = portfolioApiUtil.createAnalyticsObj;
+  window.createAnalyticsObj = createAnalyticsObj;
 };
 
 export default debugMode;
