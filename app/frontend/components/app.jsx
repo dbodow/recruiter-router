@@ -5,6 +5,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import LinksManagerContainer from './links_manager/links_manager_container';
 import GreetingContainer from "./greeting/greeting_container";
 import SessionFormContainer from "./session_form/session_form_container";
+import Splash from "./splash/splash";
 import PortfolioBuilderContainer from "./portfolio_builder/portfolio_builder_container";
 import PortfolioManagerContainer from "./portfolio_manager/portfolio_manager_container";
 import NavBar from "./navbar/navbar";
@@ -26,6 +27,7 @@ const App = () => (
       </div>
     </header>
     <Switch>
+      <Route exact path="/" component={Splash} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/register" component={SessionFormContainer} />
       <ProtectedRoute path="/builder" component={PortfolioBuilderContainer} />
