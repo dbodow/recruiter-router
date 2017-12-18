@@ -32,7 +32,7 @@ export default class SkillsBuilder extends React.Component {
 
   renderSkillDatum(i) {
     return (
-      <div className="skill-datum" key={i}>
+      <div className="skill-datum" key={`skill-${i}`}>
         <input
           className="skill-name"
           name={`skill-name-${i}`}
