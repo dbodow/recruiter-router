@@ -1,11 +1,19 @@
 import React from "react";
-import moment from "moment";
+
+import Moment from "moment";
+import { extendMoment } from "moment-range";
+const moment = extendMoment(Moment);
+
 import { Bar, HorizontalBar, Line } from "react-chartjs-2";
 import ChartSummaryCard from "./chart_summary_card";
 
 class ProjectManagerChart extends React.Component {
   constructor(props) {
     super(props);
+
+    // let now = moment();
+    // let format = moment => ()
+    //   moment().format("MMM D, YYYY") + " | week " + moment().format("w");
     this.state = {
       chartData: {
         labels: [
@@ -17,7 +25,7 @@ class ProjectManagerChart extends React.Component {
           "week 6",
           "week 7",
           "week 8",
-          "week 9"
+          moment().format("MM/DD")
         ],
         datasets: [
           {
@@ -25,8 +33,8 @@ class ProjectManagerChart extends React.Component {
             label: "Page Views",
             data: [0, 1, 3, 5, 2, 10, 12, 5, 30],
             borderColor: "rgba(30, 225, 140, 1)",
-            backgroundColor: "rgba(8, 62, 168, .5)",
-            lineTension: 0
+            backgroundColor: "rgba(8, 62, 168, .35)",
+            cubicInterpolationMode: "default"
           }
         ]
       }
@@ -37,7 +45,7 @@ class ProjectManagerChart extends React.Component {
     let visits = this.props.analytics[1].visits.map(timestamp =>
       moment(timestamp).format("dddd, MMMM Do YYYY, h:mm:ss a")
     );
-    console.log(visits);
+    // console.log(visits);
     return (
       <div className="pm-chart-container pm-flex-2b">
         <div className="chart">
