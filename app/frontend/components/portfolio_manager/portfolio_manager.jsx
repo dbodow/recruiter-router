@@ -12,9 +12,6 @@ class PortfolioManager extends React.Component {
     if (this.props.portfolio === null) {
       return null;
     } else {
-      //TODO: remove
-      // console.log(this.props);
-
       return (
         <div className="pm-container max-width main">
           <PortfolioManagerHeader />

@@ -12,7 +12,8 @@ class PortfolioManagerMain extends React.Component {
     super(props);
     this.state = {
       chartData: [],
-      companyVisits: this.getCompanyVisits()
+      companyVisits: this.getCompanyVisits(),
+      selectedCompany: ""
     };
 
     this.handleTagSelection = this.handleTagSelection.bind(this);
@@ -143,10 +144,11 @@ class PortfolioManagerMain extends React.Component {
   handleCompanySelection(e) {
     let companyName = e.toString();
     this.setState({ chartData: this.transformData(companyName) });
-    console.log(this.state);
+    this.setState({ selectedCompany: companyName });
   }
 
   render() {
+    console.log(this.state.companyVisits);
     return (
       <div className="pm-main-box pm-flex-2 max-width">
         <div className="pm-aside-container pm-flex-2a">
@@ -171,6 +173,7 @@ class PortfolioManagerMain extends React.Component {
         <PortfolioManagerChart
           analytics={this.props.analytics}
           chartData={this.state.chartData}
+          selectedCompany={this.state.selectedCompany}
         />
       </div>
     );

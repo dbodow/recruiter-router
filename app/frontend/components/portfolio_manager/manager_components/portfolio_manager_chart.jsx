@@ -36,6 +36,7 @@ class ProjectManagerChart extends React.Component {
       }
     };
     this.reloadChart = this.reloadChart.bind(this);
+    this.selectAnalytics = this.selectAnalytics.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -80,13 +81,19 @@ class ProjectManagerChart extends React.Component {
     };
   }
 
+  selectAnalytics() {
+    return this.props.analytics.find(el => {
+      return el.companyName === this.props.selectedCompany;
+    });
+  }
+
   render() {
-    console.log(this.props.chartData.length);
     if (this.props.chartData.length < 1) {
       return <div className="pm-chart-container pm-flex-2b">&nbsp;</div>;
     } else {
       return (
         <div className="pm-chart-container pm-flex-2b">
+          <ChartSummaryCard datum={this.selectAnalytics()} />
           <div className="chart">
             <Line
               data={this.reloadChart()}
@@ -122,7 +129,6 @@ class ProjectManagerChart extends React.Component {
               }}
             />
           </div>
-          <ChartSummaryCard analytics={this.props.analytics[1]} />
         </div>
       );
     }
