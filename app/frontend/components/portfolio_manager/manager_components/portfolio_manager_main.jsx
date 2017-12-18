@@ -137,9 +137,9 @@ class PortfolioManagerMain extends React.Component {
     ));
   }
 
-  // handleTagSelection(e) {
-  //   console.log(e);
-  // }
+  handleTagSelection(e) {
+    console.log(e);
+  }
 
   handleCompanySelection(e) {
     let companyName = e.toString();
