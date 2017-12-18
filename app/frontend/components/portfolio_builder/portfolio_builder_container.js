@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
-// TODO Update with ajax thunk actions when completed
-import { receivePortfolio, receiveErrors } from
+import { fetchPortfolio, createTag, deleteTag, updatePortfolio } from
   '../../actions/entities_actions';
 import PortfolioBuilder from
   './portfolio_builder';
@@ -9,15 +8,18 @@ import PortfolioBuilder from
 
 const mapStateToProps = (state) => {
   return {
-    entities: state.entities,
+    portfolio: state.entities.portfolio,
     errors: state.errors.entities
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    receivePortfolio,
-    receiveErrors
+    fetchPortfolio: () => dispatch(fetchPortfolio()),
+    createTag: tagName => dispatch(createTag(tagName)),
+    deleteTag: tagName => dispatch(deleteTag(tagName)),
+    updatePortfolio: (portfolioSection, sectionName, tagName) =>
+      dispatch(updatePortfolio(portfolioSection, sectionName, tagName))
   };
 };
 
