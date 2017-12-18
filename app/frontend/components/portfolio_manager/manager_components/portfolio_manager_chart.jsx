@@ -31,8 +31,8 @@ class ProjectManagerChart extends React.Component {
           {
             fill: true,
             label: "Page Views",
-            data: [0, 1, 3, 5, 2, 10, 12, 5, 30],
-            // data: this.props.chartData,
+            // data: [0, 1, 3, 5, 2, 10, 12, 5, 30],
+            data: this.props.chartData,
             borderColor: "rgba(30, 225, 140, 1)",
             backgroundColor: "rgba(8, 62, 168, .35)",
             cubicInterpolationMode: "default"
@@ -42,49 +42,71 @@ class ProjectManagerChart extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      datasets: [
+        {
+          fill: true,
+          label: "Page Views",
+          data: nextProps.chartData,
+          borderColor: "rgba(30, 225, 140, 1)",
+          backgroundColor: "rgba(8, 62, 168, .35)",
+          cubicInterpolationMode: "default"
+        }
+      ]
+    });
+    console.log(this.state);
+  }
+
   render() {
-    let visits = this.props.analytics[1].visits.map(timestamp =>
-      moment(timestamp).format("dddd, MMMM Do YYYY, h:mm:ss a")
-    );
+    // let visits = this.props.analytics[1].visits.map(timestamp =>
+    //   moment(timestamp).format("dddd, MMMM Do YYYY, h:mm:ss a")
+    // );
     // console.log(visits);
-    return (
-      <div className="pm-chart-container pm-flex-2b">
-        <div className="chart">
-          <Line
-            data={this.state.chartInfo}
-            options={{
-              maintainAspectRatio: false,
-              fill: true,
-              responsive: true,
-              scales: {
-                xAxes: [
-                  {
-                    display: true,
-                    scaleLabel: {
+    // console.log(this.state.chartInfo.datasets[0].data);
+    if (this.state.chartInfo.datasets[0].data === []) {
+      // console.log(this.state.chartInfo.datasets[0].data);
+      return null;
+    } else {
+      return (
+        <div className="pm-chart-container pm-flex-2b">
+          <div className="chart">
+            <Line
+              data={this.state.chartInfo}
+              options={{
+                maintainAspectRatio: false,
+                fill: true,
+                responsive: true,
+                scales: {
+                  xAxes: [
+                    {
                       display: true,
-                      labelString: "weeks from today"
+                      scaleLabel: {
+                        display: true,
+                        labelString: "weeks from today"
+                      }
                     }
-                  }
-                ],
-                yAxes: [
-                  {
-                    ticks: {
-                      beginAtZero: true
-                    },
-                    display: true,
-                    scaleLabel: {
+                  ],
+                  yAxes: [
+                    {
+                      ticks: {
+                        beginAtZero: true
+                      },
                       display: true,
-                      labelString: "page views"
+                      scaleLabel: {
+                        display: true,
+                        labelString: "page views"
+                      }
                     }
-                  }
-                ]
-              }
-            }}
-          />
+                  ]
+                }
+              }}
+            />
+          </div>
+          <ChartSummaryCard analytics={this.props.analytics[1]} />
         </div>
-        <ChartSummaryCard analytics={this.props.analytics[1]} />
-      </div>
-    );
+      );
+    }
   }
 }
 

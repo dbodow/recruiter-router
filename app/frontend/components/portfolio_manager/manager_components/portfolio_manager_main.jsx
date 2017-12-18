@@ -11,9 +11,13 @@ class PortfolioManagerMain extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartData: {},
+      chartData: [],
       companyVisits: this.getCompanyVisits()
     };
+
+    this.handleTagSelection = this.handleTagSelection.bind(this);
+    this.handleCompanySelection = this.handleCompanySelection.bind(this);
+    this.transformData = this.transformData.bind(this);
   }
 
   getCompanyVisits() {
@@ -106,7 +110,7 @@ class PortfolioManagerMain extends React.Component {
       }
     });
 
-    return chartData;
+    return Object.values(chartData);
   }
 
   renderTagNames() {
@@ -133,21 +137,26 @@ class PortfolioManagerMain extends React.Component {
     ));
   }
 
-  handleSelection(e) {
-    let thing = e.toString();
-    // console.log(thing);
+  handleTagSelection(e) {
+    console.log(e);
+  }
+
+  handleCompanySelection(e) {
+    let companyName = e.toString();
+    this.setState({ chartData: this.transformData(companyName) });
+    console.log(this.state);
   }
 
   render() {
     // console.log(this.props);
     // console.log(this.state);
-    console.log(this.transformData("Bauch Group"));
+    // console.log(this.handleSelection);
     return (
       <div className="pm-main-box pm-flex-2 max-width">
         <div className="pm-aside-container pm-flex-2a">
           <h2>Portfolio Manager Aside</h2>
           <div>
-            <Wrapper onSelection={this.handleSelection}>
+            <Wrapper onSelection={this.handleTagSelection}>
               <Button>tags</Button>
               <Menu>
                 <ul className="tags-ul">{this.renderTagNames()}</ul>
@@ -155,7 +164,7 @@ class PortfolioManagerMain extends React.Component {
             </Wrapper>
           </div>
           <div>
-            <Wrapper onSelection={this.handleSelection}>
+            <Wrapper onSelection={this.handleCompanySelection}>
               <Button>companies</Button>
               <Menu>
                 <ul className="companies-ul">{this.renderCompanies()}</ul>
@@ -165,7 +174,7 @@ class PortfolioManagerMain extends React.Component {
         </div>
         <PortfolioManagerChart
           analytics={this.props.analytics}
-          chartData={this.transformData}
+          chartData={this.state.chartData}
         />
       </div>
     );
