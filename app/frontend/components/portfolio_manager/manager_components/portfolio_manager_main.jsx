@@ -165,7 +165,7 @@ class PortfolioManagerMain extends React.Component {
         </div>
         <PortfolioManagerChart
           analytics={this.props.analytics}
-          chartData={this.state.chartData}
+          chartData={this.transformData}
         />
       </div>
     );

@@ -15,23 +15,24 @@ class ProjectManagerChart extends React.Component {
     // let format = moment => ()
     //   moment().format("MMM D, YYYY") + " | week " + moment().format("w");
     this.state = {
-      chartData: {
+      chartInfo: {
         labels: [
-          "week 1",
-          "week 2",
-          "week 3",
-          "week 4",
-          "week 5",
-          "week 6",
-          "week 7",
-          "week 8",
-          moment().format("MM/DD")
+          "8 weeks ago",
+          "7 weeks ago",
+          "6 weeks ago",
+          "5 weeks ago",
+          "4 weeks ago",
+          "3 weeks ago",
+          "2 weeks ago",
+          "last week",
+          "today, " + moment().format("MM/DD")
         ],
         datasets: [
           {
             fill: true,
             label: "Page Views",
             data: [0, 1, 3, 5, 2, 10, 12, 5, 30],
+            // data: this.props.chartData,
             borderColor: "rgba(30, 225, 140, 1)",
             backgroundColor: "rgba(8, 62, 168, .35)",
             cubicInterpolationMode: "default"
@@ -50,7 +51,7 @@ class ProjectManagerChart extends React.Component {
       <div className="pm-chart-container pm-flex-2b">
         <div className="chart">
           <Line
-            data={this.state.chartData}
+            data={this.state.chartInfo}
             options={{
               maintainAspectRatio: false,
               fill: true,
@@ -61,7 +62,7 @@ class ProjectManagerChart extends React.Component {
                     display: true,
                     scaleLabel: {
                       display: true,
-                      labelString: "Date"
+                      labelString: "weeks from today"
                     }
                   }
                 ],
@@ -73,7 +74,7 @@ class ProjectManagerChart extends React.Component {
                     display: true,
                     scaleLabel: {
                       display: true,
-                      labelString: "Page Views"
+                      labelString: "page views"
                     }
                   }
                 ]
