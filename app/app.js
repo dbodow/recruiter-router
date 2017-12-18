@@ -4,12 +4,14 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect("mongodb://localhost/recruiter-router", { useMongoClient: true })
+  .connect(
+    "mongodb://heroku_0rt4l75q:j6jpfrr917r7ehkhndh1idt1le@ds161026.mlab.com:61026/heroku_0rt4l75q",
+    { useMongoClient: true }
+  )
   .then(() => console.log("connection successful"))
   .catch(err => console.err(err));
 
@@ -21,9 +23,11 @@ const auth = require("./routes/api/authentication");
 const portfoliosManage = require("./routes/api/portfolios-manage");
 const linksManager = require("./routes/api/links-manager");
 
-const portfolio = require('./routes/portfolios');
+const portfolio = require("./routes/portfolios");
 
 const app = express();
+const port = process.env.PORT;
+app.listen(port);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -59,10 +63,10 @@ app.use("/", index);
 // JSON rendering
 
 // PUT ALL API NAMESPACE ABOVE ROUTE MATCHING!!!!!!!!
-app.use('/api/authentication', auth);
+app.use("/api/authentication", auth);
 app.use("/api/portfolio-manager", portfoliosManage);
 app.use("/api/links-manager", linksManager);
-app.get('/:user/:company', portfolio);
+app.get("/:user/:company", portfolio);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
