@@ -6,7 +6,7 @@ export default () => (
     <NavLink to="/builder" className="header-link">
       Build Portfolio
     </NavLink>
-    <NavLink to="/manage-recruiters" className="header-link">
+    <NavLink to="/links" className="header-link">
       Manage Recruiters
     </NavLink>
     <NavLink to="/analytics" className="header-link">
