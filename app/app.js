@@ -4,11 +4,8 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const port = process.env.PORT;
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-
-app.listen(port);
 
 mongoose
   .connect(
@@ -29,6 +26,8 @@ const linksManager = require("./routes/api/links-manager");
 const portfolio = require("./routes/portfolios");
 
 const app = express();
+const port = process.env.PORT;
+app.listen(port);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
