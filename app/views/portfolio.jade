@@ -76,7 +76,7 @@ html.no-js
             ul.slides
               li
                 .overlay
-                img(src='https://lh3.googleusercontent.com/xhTZ8khEj3uJ2JEg6INrf0U0tXE0l6xn2P_aGzODMhDFfaHRz_A19BtX2Q6NDLeiG-WntzOqzG45HhznxQAb9YG9qk01XCY75ulrOKECdYZS9RKUnlbDAjueTiq3utzGvaRAU34_f_-vLPuJZjQC_GOL3hdVV12Bi1IS3RSx5PJR-e8MdBgplnnGAyu6zSH2af4SqJDL9P3xfznBzJcAr0zslOYo2FBu9jP_yQR7vhBhqmCqXry6NlkLMw_6yZcH5fYP9lkBlODNfqGIwAEZN4zfDYM7r5nFs22mseRctM_cGWpWPGqfZO4iJW32_ZstXsdJj-OP0ku8AVhqM6yJ68sYuzQg4whwpi2BMFQQ2__TZkYuCwYZ401C-v9Ug-AMsinMgQFTQ4J9-8oQi1-NFQilgRHeEFwd8a797g6YwpQlCfpHoopim6nb6VscteTW7FFnSjvGLSK8b6GlUs8qoU5OK6_bWJ0X9HievvPoMgOKmMPXYQ-lRqdzSUcHHtbWWMTl5C0VxjMylIGcd-S2LCXyre6xogy04s-dW6b-iqlXv_IJN2y-f4S1h9TgR2bf-KdWZUKVOK8koUk1L192cpqx7h1XQP_NYviag_h2Iqo=w1410-h942-no', alt='')
+                img(src='https://s3-us-west-1.amazonaws.com/recruiter-router-dev/pedro-lastra-163501.jpg', alt='')
                 .slider-caption.visible-md.visible-lg
                   h2 #{tag.heroSection.title}
                   p #{tag.heroSection.subtitle}
@@ -92,7 +92,7 @@ html.no-js
             h2 Experience
           // /.heading-section
         // /.row
-        
+
         script(type='text/javascript').
         .center-content-section
           - for (var i = 0; i < tag.experienceSection.experiences.length; ++i) {
@@ -129,7 +129,7 @@ html.no-js
           - for (var i = 0; i < tag.projectsSection.length; ++i) {
           .portfolio-item.col-md-3.col-sm-6
             .portfolio-thumb
-              img(src=tag.projectsSection[i].imageUrl, alt='')
+              img(src="https://s3-us-west-1.amazonaws.com/recruiter-router-dev/abstract-2709402_640.png", alt='')
               .portfolio-overlay
                 h3 #{tag.projectsSection[i].projectTitle}
                 p #{tag.projectsSection[i].projectDescription}
@@ -157,9 +157,9 @@ html.no-js
               br
               br
           // /.col-md-8
-          
+
           .col-md-4.col-sm-6
-                
+
             ul.progess-bars
             script(type='text/javascript').
             - for (var i = 0; i < tag.skillsSection.skills.length; ++i) {
