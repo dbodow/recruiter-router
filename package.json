@@ -7,7 +7,7 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js",
+    "start": "NODE_ENV=production MONGO_URL=yourMongoURL node index.js",
     "postinstall": "webpack"
   },
   "dependencies": {
