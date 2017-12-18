@@ -16,7 +16,7 @@ class PortfolioManager extends React.Component {
       // console.log(this.props);
 
       return (
-        <div className="pm-container max-width">
+        <div className="pm-container max-width main">
           <PortfolioManagerHeader />
           <PortfolioManagerMain
             analytics={this.props.portfolio.analytics}
