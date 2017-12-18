@@ -12,6 +12,7 @@
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
     "body-parser": "~1.18.2",
+    "chart.js": "^2.5.0",
     "circular": "^1.0.5",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -21,12 +22,15 @@
     "jade": "~1.11.0",
     "json-stringify-safe": "^5.0.1",
     "lodash": "^4.17.4",
+    "moment-range": "^3.1.0",
     "mongoose": "^4.13.6",
     "morgan": "~1.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.4.0",
     "react": "^16.2.0",
+    "react-aria-menubutton": "^5.1.0",
+    "react-chartjs-2": "^2.6.4",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -38,6 +42,6 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.7"
+    "nodemon": "^1.13.2"
   }
 }
