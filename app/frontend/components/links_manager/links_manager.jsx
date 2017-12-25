@@ -27,29 +27,26 @@ export default class LinksForm extends React.Component {
       const menuItems = menuItemWords.map((word, i) => {
         return (
           <li key={i}>
-            <MenuItem className='MyMenuButton-menuItem'>
+            <MenuItem className='tags-li'>
               {word}
             </MenuItem>
           </li>
         );
       });
       return (
-        <div className="main" className="link-manger-container">
-          <div className="max-width">
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" placeholder="Enter a company name" value={this.state.companyName} onChange={this.update("companyName")} className="company-name-input"></input>
-                <Wrapper
-                  className='MyMenuButton'
-                  onSelection={this.handleSelection("tagName")}
-                >
-                  <Button className='MyMenuButton-button'>
-                    Select Tag
+        <div className="main page-width flex-center">
+          <div className="links-manager-container">
+            <form onSubmit={this.handleSubmit} className="links-manager-form">
+              <input type="text" placeholder="enter company name" value={this.state.companyName} onChange={this.update("companyName")} className="company-name-input"></input>
+                <Wrapper onSelection={this.handleSelection("tagName")}>
+                  <Button className='tags-btn'>
+                    show tags
                   </Button>
-                  <Menu className='MyMenuButton-menu'>
+                  <Menu className='tags-ul'>
                     <ul>{menuItems}</ul>
                   </Menu>
                 </Wrapper>
-              <input type="submit" value="Submit" />
+              <input className="links-form-submit-btn" type="submit" value="Submit" />
             </form>
           </div>
         </div>
@@ -70,8 +67,8 @@ export default class LinksForm extends React.Component {
     if (tagName === "") {
       tagName = "Default";
     }
-    alert(`Send this link to a recruiter at ${companyName}:\nhttps://www.recruiterrouter.com/${this.props.currentUser.username}/${companyName.toLowerCase().replace(/\W/ , "")}`);
     this.props.createAnalyticsObj(companyName, tagName);
+    alert(`Send this link to a recruiter at ${companyName}:\nhttps://www.recruiterrouter.com/${this.props.currentUser.username}/${companyName.toLowerCase().replace(/\W/ , "")}`);
   }
 
   handleSelection(field) {
