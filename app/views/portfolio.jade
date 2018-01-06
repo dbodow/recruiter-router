@@ -103,7 +103,7 @@ html.no-js
                       #experience-job-title
                         p !{JSON.stringify(tag.experienceSection.experiences[i].companyName).replace(/"/g, "")}
                         p !{JSON.stringify(tag.experienceSection.experiences[i].jobTitle).replace(/"/g, "")}
-                      p.dates !{new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].startDate))).toLocaleDateString() + " - " + new Date(parseInt(JSON.stringify(tag.experienceSection.experiences[i].endDate))).toLocaleDateString()}
+                      p.dates !{(tag.experienceSection.experiences[i].startDate).replace(/"/g, "") + " - " + (tag.experienceSection.experiences[i].endDate).replace(/"/g, "")}
                         //- i.fa.fa-file-code-o
                     // /.service-icon
                     .service-content
@@ -126,17 +126,17 @@ html.no-js
         script(type='text/javascript').
         .row
         .center-content-section
-          - for (var i = 0; i < tag.projectsSection.length; ++i) {
+          - for (var i = 0; i < tag.projectsSection.projects.length; ++i) {
           .portfolio-item.col-md-3.col-sm-6
             .portfolio-thumb
-              img(src=tag.projectsSection[i].imageUrl, alt='')
+              img(src=tag.projectsSection.projects[i].imageUrl, alt='')
               .portfolio-overlay
-                h3 #{tag.projectsSection[i].projectTitle}
-                p #{tag.projectsSection[i].projectDescription}
+                h3 #{tag.projectsSection.projects[i].projectTitle}
+                p #{tag.projectsSection.projects[i].projectDescription}
                 .project-links
-                  a(href=tag.projectsSection[i].projectURL) Host
+                  a(href=tag.projectsSection.projects[i].projectURL) Host
                   a  |
-                  a(href=tag.projectsSection[i].githubURL)  GitHub
+                  a(href=tag.projectsSection.projects[i].githubURL)  GitHub
               // /.portfolio-overlay
             // /.portfolio-thumb
           // /.portfolio-item
