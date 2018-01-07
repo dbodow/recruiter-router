@@ -61,7 +61,7 @@ export default class LinksForm extends React.Component {
       tagName = "Default";
     }
     this.props.createAnalyticsObj(companyName, tagName);
-    alert(`Send this link to a recruiter at ${companyName}:\nhttp://www.recruiterrouter.herokupapp.com/${this.props.currentUser.username}/${companyName.toLowerCase().replace(/\W/ , "")}`);
+    alert(`Send this link to a recruiter at ${companyName}:\nhttp://recruiterrouter.herokuapp.com/${this.props.currentUser.username}/${companyName.toLowerCase().replace(/\W/ , "")}`);
   }
 
   handleSelection(field) {
