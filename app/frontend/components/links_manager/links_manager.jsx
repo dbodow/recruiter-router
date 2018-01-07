@@ -1,5 +1,5 @@
-import React from 'react';
-import { Wrapper, Button, Menu, MenuItem } from 'react-aria-menubutton';
+import React from "react";
+import { Wrapper, Button, Menu, MenuItem } from "react-aria-menubutton";
 
 export default class LinksForm extends React.Component {
   constructor() {
@@ -13,17 +13,14 @@ export default class LinksForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPortfolio().then(() =>
-      this.setState({loading: false}));
+    this.props.fetchPortfolio().then(() => this.setState({ loading: false }));
   }
 
   render() {
     if (!this.state.loading) {
       const menuItemWords = this.props.portfolio.taggedInfo.map(
-        (tagObj) => (
-            tagObj.tagName
-          )
-        );
+        tagObj => tagObj.tagName
+      );
       const menuItems = menuItemWords.map((word, i) => {
         return (
           <li key={i}>
@@ -52,11 +49,7 @@ export default class LinksForm extends React.Component {
         </div>
       );
     } else {
-      return (
-        <div>
-          Loading...
-        </div>
-      );
+      return <div>Loading...</div>;
     }
   }
 
@@ -68,11 +61,10 @@ export default class LinksForm extends React.Component {
       tagName = "Default";
     }
     this.props.createAnalyticsObj(companyName, tagName);
-    alert(`Send this link to a recruiter at ${companyName}:\nhttps://www.recruiterrouter.com/${this.props.currentUser.username}/${companyName.toLowerCase().replace(/\W/ , "")}`);
+    alert(`Send this link to a recruiter at ${companyName}:\nhttp://www.recruiterrouter.herokupapp.com/${this.props.currentUser.username}/${companyName.toLowerCase().replace(/\W/ , "")}`);
   }
 
   handleSelection(field) {
-    console.log(this.state);
     return e =>
       this.setState({
         [field]: e
@@ -80,11 +72,9 @@ export default class LinksForm extends React.Component {
   }
 
   update(field) {
-    console.log(this.state);
     return e =>
       this.setState({
         [field]: e.target.value
       });
   }
-
 }

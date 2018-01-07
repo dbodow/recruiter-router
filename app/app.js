@@ -4,14 +4,20 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
+const MongoURI = process.env.MONGODB_URI || "mongodb://localhost/recruiter-router";
+console.log(`Beginning DB connection at ${MongoURI}...`);
 mongoose
-  .connect("mongodb://localhost/recruiter-router", { useMongoClient: true })
-  .then(() => console.log("connection successful"))
-  .catch(err => console.err(err));
+  .connect(
+    MongoURI,
+    { useMongoClient: true }
+  )
+  .then(() => console.log("DB connection successful"))
+  .catch(err => {
+    console.log("Could not connect to DB; make sure `mongod` is running");
+  });
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -21,9 +27,11 @@ const auth = require("./routes/api/authentication");
 const portfoliosManage = require("./routes/api/portfolios-manage");
 const linksManager = require("./routes/api/links-manager");
 
-const portfolio = require('./routes/portfolios');
+const portfolio = require("./routes/portfolios");
 
 const app = express();
+
+if (process.env.NODE_ENV === "development") app.listen(3000);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -59,10 +67,10 @@ app.use("/", index);
 // JSON rendering
 
 // PUT ALL API NAMESPACE ABOVE ROUTE MATCHING!!!!!!!!
-app.use('/api/authentication', auth);
+app.use("/api/authentication", auth);
 app.use("/api/portfolio-manager", portfoliosManage);
 app.use("/api/links-manager", linksManager);
-app.get('/:user/:company', portfolio);
+app.get("/:user/:company", portfolio);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
