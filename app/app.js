@@ -7,13 +7,16 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
+console.log("Beginning DB connection...");
 mongoose
   .connect(
-    "mongodb://heroku_0rt4l75q:j6jpfrr917r7ehkhndh1idt1le@ds161026.mlab.com:61026/heroku_0rt4l75q",
+    process.env.MONGODB_URI || "mongodb://localhost/recruiter-router",
     { useMongoClient: true }
   )
-  .then(() => console.log("connection successful"))
-  .catch(err => console.err(err));
+  .then(() => console.log("DB connection successful"))
+  .catch(err => {
+    console.log("Could not connect to DB; make sure `mongod` is running");
+  });
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -26,8 +29,9 @@ const linksManager = require("./routes/api/links-manager");
 const portfolio = require("./routes/portfolios");
 
 const app = express();
-const port = process.env.PORT || 27017;
-app.listen(port);
+const port = process.env.PORT || 3000;
+console.log(`Listening on port ${port}...`);
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -85,5 +89,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+app.listen(port);
 
 module.exports = app;
