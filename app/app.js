@@ -7,10 +7,11 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-console.log("Beginning DB connection...");
+const MongoURI = process.env.MONGODB_URI || "mongodb://localhost/recruiter-router";
+console.log(`Beginning DB connection at ${MongoURI}...`);
 mongoose
   .connect(
-    process.env.MONGODB_URI || "mongodb://localhost/recruiter-router",
+    MongoURI,
     { useMongoClient: true }
   )
   .then(() => console.log("DB connection successful"))
