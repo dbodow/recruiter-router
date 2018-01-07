@@ -26,7 +26,7 @@ const linksManager = require("./routes/api/links-manager");
 const portfolio = require("./routes/portfolios");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 27017;
 app.listen(port);
 
 // view engine setup
