@@ -30,9 +30,6 @@ const linksManager = require("./routes/api/links-manager");
 const portfolio = require("./routes/portfolios");
 
 const app = express();
-const port = process.env.PORT || 3000;
-console.log(`Listening on port ${port}...`);
-app.listen(port);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
