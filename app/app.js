@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 console.log("Beginning DB connection...");
+console.log(process.env.MONGODB_URI);
 mongoose
   .connect(
     process.env.MONGODB_URI || "mongodb://localhost/recruiter-router",
@@ -31,7 +32,7 @@ const portfolio = require("./routes/portfolios");
 const app = express();
 const port = process.env.PORT || 3000;
 console.log(`Listening on port ${port}...`);
-
+app.listen(port);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -89,7 +90,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-app.listen(port);
 
 module.exports = app;
