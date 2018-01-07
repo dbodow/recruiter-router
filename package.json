@@ -17,7 +17,7 @@
   "scripts": {
     "start": "per-env",
     "start:development": "node ./app/app.js",
-    "start:production": "node .app/bin/www",
+    "start:production": "node ./app/bin/www",
     "postinstall": "webpack"
   },
   "dependencies": {
