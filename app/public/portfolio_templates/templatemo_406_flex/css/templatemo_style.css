@@ -620,7 +620,7 @@ hr {
   text-align: center;
   color: white;
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   -webkit-transition: all 200ms ease-in-out;
   -moz-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -648,7 +648,7 @@ hr {
 .portfolio-item .portfolio-thumb .portfolio-overlay a.expand i {
   line-height: 36px;
 }
-.portfolio-item .portfolio-thumb:hover .portfolio-overlay {
+.portfolio-item .portfolio-thumb .portfolio-overlay {
   opacity: 1;
   visibility: visible;
 }
