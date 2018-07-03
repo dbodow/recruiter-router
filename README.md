@@ -1,9 +1,12 @@
 # Flex Project Proposal: 
-## \< RecruiterRouter /\>, putting the closing tag on your Job Search (JS).
 
-Please see this project's [wiki](https://github.com/dbodow/recruiter-router/wiki) for the full proposal!
+## \< RecruiterRouter /\>, putting the closing tag on your Job Search (JS)
 
-# Project Overview:
+![recruiter-router](assets/images/recruiter-router.gif)
+
+Full proposal: [wiki](https://github.com/dbodow/recruiter-router/wiki)
+
+## Project Overview:
 
 RecruiterRouter is a portfolio website template builder for users who wish to customize their portfolios to better target recruiters in their job search. Just as a candidate might customize his or her cover letter to respond to a job listing, users can customize their personal portfolios with RecruiterRouter to highlight various features of their skillset and background depending on the job to which they are applying.
 
