@@ -1,12 +1,12 @@
-# Flex Project Proposal: 
+# RecruiterRouter
 
-## \< RecruiterRouter /\>, putting the closing tag on your Job Search (JS)
+\< RecruiterRouter /\>, putting the closing tag on your Job Search (JS)
 
 ![recruiter-router](assets/images/recruiter-router.gif)
 
 Full proposal: [wiki](https://github.com/dbodow/recruiter-router/wiki)
 
-## Project Overview:
+## Project Overview
 
 RecruiterRouter is a portfolio website template builder for users who wish to customize their portfolios to better target recruiters in their job search. Just as a candidate might customize his or her cover letter to respond to a job listing, users can customize their personal portfolios with RecruiterRouter to highlight various features of their skillset and background depending on the job to which they are applying.
 
@@ -24,7 +24,7 @@ Recruiter Router has 3 key features:
 
 * Tracks visits to custom links and allows users to view companies' engagement with their various portfolio campaigns.
 
-# Technology Stack
+## Technology Stack
 
 RecruiterRouter is built on the MERN stack (MongoDB, Express.js, React.js, and Node.js). Given the document-like structure of a static web portfolio page, we took advantage of MongoDB's document database structure and patterns of denormalized state to fetch and write data easily.
 
