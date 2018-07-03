@@ -30,7 +30,7 @@ RecruiterRouter is built on the MERN stack (MongoDB, Express.js, React.js, and N
 
 Beyond this stack, we also used OAuth2 with the `Local` strategy for user authentication, and Chart.js for analytics display.
 
-# User Testing
+## User Testing
 
 * The **Portfolio Builder** can be tested by creating an account and navigating to the **Portfolio Builder** link at the header.
 
@@ -45,9 +45,10 @@ Password: password
 
 A priority enhancement will be to place an automatic login for the demo user on the login window.
 
-# Challenges
+## Challenges
 
 Given the scope of this project, our team faced several challenges:
+
 * Designing the MongoDB schema and interacting with the database
   * Because we chose to use a denormalized structure to quickly and easily fetch and store portfolio data, we had to deal with issues in updating slices of the document state, in particular, updating arrays with the Mongoose `.set` feature.
   * Developing seeds for user data, which required writing several methods relying on Faker data.
